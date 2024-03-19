@@ -1,0 +1,2831 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(DashForm)
+Gui.Form..Caption("Sigmanest to GSS Part/Router Uploader 6875 v.2023.09.18.00")
+Gui.Form..Size(1421,720)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..BarHelpButton(True,"","Sigmanest To GSS Part and Router Uploader 6875","",1.0.1,"9/6/2022 12:00:00 AM","",0,0,False)
+Gui.Form..BarRefreshButton(False)
+Gui.Form..BarExportButton(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..AccentColor(3)
+Gui.Form..Event(ExportClick,Form_ExportClick)
+Gui.Form..Event(UserButtonClicked,Form_UserButtonClicked)
+Gui.Form.ac1.Create(AccordionControl)
+Gui.Form.ac1.Enabled(True)
+Gui.Form.ac1.Visible(True)
+Gui.Form.ac1.Size(130,654)
+Gui.Form.ac1.Position(0,0)
+Gui.Form.ac1.Minimized(False)
+Gui.Form.ac1.Dock(3)
+Gui.Form.ac1.Event(ElementClick,ac1_ElementClick)
+Gui.Form.SplitContainer1.Create(SplitContainer)
+Gui.Form.SplitContainer1.Enabled(True)
+Gui.Form.SplitContainer1.Visible(True)
+Gui.Form.SplitContainer1.Zorder(0)
+Gui.Form.SplitContainer1.Size(1117,654)
+Gui.Form.SplitContainer1.Position(130,0)
+Gui.Form.SplitContainer1.Orientation(1)
+Gui.Form.SplitContainer1.SplitterPosition(200)
+Gui.Form.SplitContainer1.Collapsed(False)
+Gui.Form.SplitContainer1.CollapsiblePanel(0)
+Gui.Form.SplitContainer1.Dock(5)
+Gui.Form.SplitContainer1.FixedPanel(0)
+Gui.Form.tab1.Create(Tab)
+Gui.Form.tab1.Enabled(True)
+Gui.Form.tab1.Visible(True)
+Gui.Form.tab1.Zorder(0)
+Gui.Form.tab1.Size(1291,442)
+Gui.Form.tab1.Position(0,0)
+Gui.Form.tab1.FontName("Tahoma")
+Gui.Form.tab1.FontSize(8.25)
+Gui.Form.tab1.Parent("SplitContainer1",1)
+Gui.Form.tab1.Dock(5)
+Gui.Form.tab1.Tabs(2)
+Gui.Form.tab1.SetTab(0)
+Gui.Form.tab1.Caption("Sigmanest")
+Gui.Form.tab1.SetTab(1)
+Gui.Form.tab1.Caption("Parts and Routers")
+Gui.Form.gsParts.Create(GsGridControl)
+Gui.Form.gsParts.Enabled(True)
+Gui.Form.gsParts.Visible(True)
+Gui.Form.gsParts.Zorder(0)
+Gui.Form.gsParts.Size(1115,463)
+Gui.Form.gsParts.Position(0,0)
+Gui.Form.gsParts.Parent("tab1",1)
+Gui.Form.gsParts.Dock(5)
+Gui.Form.gsParts.Event(CellValueChanged,gsParts_CellValueChanged)
+Gui.Form.gsSigmanest.Create(GsGridControl)
+Gui.Form.gsSigmanest.Enabled(True)
+Gui.Form.gsSigmanest.Visible(True)
+Gui.Form.gsSigmanest.Zorder(0)
+Gui.Form.gsSigmanest.Size(1289,413)
+Gui.Form.gsSigmanest.Position(0,0)
+Gui.Form.gsSigmanest.Parent("tab1",0)
+Gui.Form.gsSigmanest.Dock(5)
+Gui.Form.frTop.Create(Frame)
+Gui.Form.frTop.Enabled(True)
+Gui.Form.frTop.Visible(True)
+Gui.Form.frTop.Zorder(0)
+Gui.Form.frTop.Size(1291,200)
+Gui.Form.frTop.Position(0,0)
+Gui.Form.frTop.Caption("")
+Gui.Form.frTop.FontName("Tahoma")
+Gui.Form.frTop.FontSize(8.25)
+Gui.Form.frTop.Parent("SplitContainer1",0)
+Gui.Form.frTop.Dock(5)
+Gui.Form.frTop.Anchor(15)
+Gui.Form.txtShipCity.Create(TextBox,"",False,91,20,0,733,152,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipCity.Parent("frTop")
+Gui.Form.txtAddress3.Create(TextBox,"",True,249,20,0,992,122,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtAddress3.Parent("frTop")
+Gui.Form.txtAddress2.Create(TextBox,"",True,249,20,0,992,100,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtAddress2.Parent("frTop")
+Gui.Form.txtAddress1.Create(TextBox,"",True,249,20,0,992,77,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtAddress1.Parent("frTop")
+Gui.Form.txtShipName.Create(TextBox,"",True,249,20,0,992,55,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipName.Parent("frTop")
+Gui.Form.lbl5.Create(Label,"Programmed By",False,75,13,0,1030,32,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.lbl5.Parent("frTop")
+Gui.Form.lblLastRefresh.Create(Label,"",True,1,13,0,100,4,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblLastRefresh.BorderStyle(0)
+Gui.Form.lblLastRefresh.Parent("frTop")
+Gui.Form.txtCustomer.Create(TextBox,"",True,100,20,0,10,65,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtCustomer.DefaultValue("")
+Gui.Form.txtCustomer.Parent("frTop")
+Gui.Form.txtProgrammedby.Create(TextBox,"Hayden",False,100,20,0,999,3,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtProgrammedby.Parent("frTop")
+Gui.Form.txtProgrammedby.DefaultValue("Hayden")
+Gui.Form.dtpEndDate.Create(DatePicker)
+Gui.Form.dtpEndDate.Enabled(True)
+Gui.Form.dtpEndDate.Visible(False)
+Gui.Form.dtpEndDate.Zorder(0)
+Gui.Form.dtpEndDate.Size(100,20)
+Gui.Form.dtpEndDate.Position(1007,28)
+Gui.Form.dtpEndDate.CheckBox(False)
+Gui.Form.dtpEndDate.FontName("Tahoma")
+Gui.Form.dtpEndDate.FontSize(8.25)
+Gui.Form.dtpEndDate.Parent("frTop")
+Gui.Form.lbl3.Create(Label,"Start Date",False,59,13,0,1020,40,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.lbl3.FontStyle(True,False,False,False,False)
+Gui.Form.lbl3.Anchor(9)
+Gui.Form.lbl3.Parent("frTop")
+Gui.Form.lblPleaseWait.Create(Label,"Please wait...",False,66,13,0,1002,34,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblPleaseWait.BorderStyle(0)
+Gui.Form.lblPleaseWait.ForeColor(7504122)
+Gui.Form.lblPleaseWait.Parent("frTop")
+Gui.Form.lblPleaseWait.Dock(0)
+Gui.Form.lblPleaseWait.Anchor(1)
+Gui.Form.lbl4.Create(Label,"End Date",False,50,13,0,1024,39,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.lbl4.FontStyle(True,False,False,False,False)
+Gui.Form.lbl4.Parent("frTop")
+Gui.Form.lbl4.Anchor(9)
+Gui.Form.proBar1.Create(ProgressBar)
+Gui.Form.proBar1.Visible(False)
+Gui.Form.proBar1.Size(65,9)
+Gui.Form.proBar1.Position(1008,36)
+Gui.Form.proBar1.Parent("frTop")
+Gui.Form.proBar1.Anchor(1)
+Gui.Form.lbl1.Create(Label,"Last Refresh:",False,65,13,0,12,4,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.Parent("frTop")
+Gui.Form.txtShipCountry.Create(TextBox,"",False,89,20,0,841,154,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipCountry.Parent("frTop")
+Gui.Form.dtpStartDate.Create(DatePicker)
+Gui.Form.dtpStartDate.Enabled(True)
+Gui.Form.dtpStartDate.Visible(False)
+Gui.Form.dtpStartDate.Zorder(0)
+Gui.Form.dtpStartDate.Size(100,20)
+Gui.Form.dtpStartDate.Position(1012,15)
+Gui.Form.dtpStartDate.CheckBox(False)
+Gui.Form.dtpStartDate.FontName("Tahoma")
+Gui.Form.dtpStartDate.FontSize(8.25)
+Gui.Form.dtpStartDate.Parent("frTop")
+Gui.Form.txtShipZip.Create(TextBox,"",True,68,20,0,1173,144,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipZip.Parent("frTop")
+Gui.Form.txtShipAttn.Create(TextBox,"",True,249,20,0,992,166,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipAttn.Parent("frTop")
+Gui.Form.lbl35.Create(Label,"Attn:",True,29,14,0,958,169,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl35.BorderStyle(0)
+Gui.Form.lbl35.Parent("frTop")
+Gui.Form.lbl34.Create(Label,"Zip:",True,20,14,0,1149,147,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl34.BorderStyle(0)
+Gui.Form.lbl34.Parent("frTop")
+Gui.Form.lbl32.Create(Label,"Phone:",True,39,14,0,948,147,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl32.BorderStyle(0)
+Gui.Form.lbl32.Parent("frTop")
+Gui.Form.lbl31.Create(Label,"Addrs. 3:",True,50,14,0,937,125,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl31.BorderStyle(0)
+Gui.Form.lbl31.Parent("frTop")
+Gui.Form.lbl30.Create(Label,"Addrs. 2:",True,50,14,0,937,103,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl30.BorderStyle(0)
+Gui.Form.lbl30.Parent("frTop")
+Gui.Form.lbl29.Create(Label,"Addrs. 1:",True,50,14,0,937,80,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl29.BorderStyle(0)
+Gui.Form.lbl29.Parent("frTop")
+Gui.Form.txtPhone.Create(TextBox,"",True,145,20,0,992,144,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPhone.Parent("frTop")
+Gui.Form.cmdCustomerLookUp.Create(Button)
+Gui.Form.cmdCustomerLookUp.Enabled(True)
+Gui.Form.cmdCustomerLookUp.Visible(True)
+Gui.Form.cmdCustomerLookUp.Zorder(0)
+Gui.Form.cmdCustomerLookUp.Size(25,23)
+Gui.Form.cmdCustomerLookUp.Position(242,63)
+Gui.Form.cmdCustomerLookUp.Caption("")
+Gui.Form.cmdCustomerLookUp.FontName("Tahoma")
+Gui.Form.cmdCustomerLookUp.FontSize(8.25)
+Gui.Form.cmdCustomerLookUp.SvgPicture("icon_browser_color")
+Gui.Form.cmdCustomerLookUp.Event(Click,cmdCustomerLookUp_Click)
+Gui.Form.txtSalesOrderNumber.Create(TextBox,"",True,100,20,0,140,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl2.Create(Label,"Work Order:",True,66,14,0,140,6,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.txtDescriptor.Create(TextBox,"",True,256,20,0,376,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDescriptor.MaxLength(30)
+Gui.Form.lbl7.Create(Label,"Description",True,60,14,0,380,6,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl7.BorderStyle(0)
+Gui.Form.txtShipToID.Create(TextBox,"",True,84,20,0,1124,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtShipToID.Event(Change,txtShipToID_Change)
+Gui.Form.lbl8.Create(Label,"Ship To ID",True,58,14,0,1125,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl8.BorderStyle(0)
+Gui.Form.txtSetupProg.Create(TextBox,"",True,43,20,0,641,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSetupLoad.Create(TextBox,"",False,43,20,0,1250,29,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSetupOp.Create(TextBox,"",True,43,20,0,692,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSetupUnload.Create(TextBox,"",False,43,20,0,1290,29,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSetupQA.Create(TextBox,"",True,43,20,0,740,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl9.Create(Label,"Customer",True,52,14,0,140,49,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl9.BorderStyle(0)
+Gui.Form.lbl10.Create(Label,"Prog",True,25,14,0,644,6,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl10.BorderStyle(0)
+Gui.Form.lbl11.Create(Label,"Load",False,26,14,0,1260,12,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl11.BorderStyle(0)
+Gui.Form.lbl12.Create(Label,"Op",True,16,14,0,695,7,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl12.BorderStyle(0)
+Gui.Form.lbl13.Create(Label,"Unload",False,37,14,0,1286,11,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl13.BorderStyle(0)
+Gui.Form.lbl14.Create(Label,"QA",True,17,14,0,743,7,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl14.BorderStyle(0)
+Gui.Form.txtSetupPressProg.Create(TextBox,"",True,34,20,0,917,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl15.Create(Label,"Press Prog",True,57,14,0,897,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl15.BorderStyle(0)
+Gui.Form.txtSetupDener.Create(TextBox,"",True,34,20,0,958,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl16.Create(Label,"Dener",True,33,14,0,960,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl16.BorderStyle(0)
+Gui.Form.txtSetupDebur.Create(TextBox,"",True,34,20,0,998,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl17.Create(Label,"Debur",True,33,14,0,1000,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl17.BorderStyle(0)
+Gui.Form.txtSetupTap.Create(TextBox,"",True,34,20,0,1037,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl18.Create(Label,"Tap",True,21,14,0,1041,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl18.BorderStyle(0)
+Gui.Form.txtSetupPVC.Create(TextBox,"",True,34,20,0,1076,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl19.Create(Label,"PVC",True,22,14,0,1080,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl19.BorderStyle(0)
+Gui.Form.txtCustomerPO.Create(TextBox,"",True,100,20,0,140,130,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl6.Create(Label,"Customer PO:",True,76,14,0,140,114,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.txtExtraNotes.Create(TextboxM)
+Gui.Form.txtExtraNotes.Enabled(True)
+Gui.Form.txtExtraNotes.Visible(True)
+Gui.Form.txtExtraNotes.Zorder(0)
+Gui.Form.txtExtraNotes.Size(257,96)
+Gui.Form.txtExtraNotes.Position(376,48)
+Gui.Form.txtExtraNotes.FontName("Tahoma")
+Gui.Form.txtExtraNotes.FontSize(8.25)
+Gui.Form.lbl21.Create(Label,"Sales Order",True,62,14,0,308,51,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl21.BorderStyle(0)
+Gui.Form.lbl22.Create(Label,"Extra Text:",True,62,14,0,309,67,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl22.BorderStyle(0)
+Gui.Form.txtSalesOrderFixedPrice.Create(TextBox,"0.00",True,53,20,0,141,174,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSalesOrderFixedPrice.NumericOnly(1)
+Gui.Form.txtSalesOrderFixedPrice.DefaultValue("0.00")
+Gui.Form.lbl23.Create(Label,"Sales Order Fixed Price:",True,128,14,0,141,159,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl23.BorderStyle(0)
+Gui.Form.lbl23.ToolTip("Optional")
+Gui.Form.txtRTRComments.Create(TextboxM)
+Gui.Form.txtRTRComments.Enabled(True)
+Gui.Form.txtRTRComments.Visible(True)
+Gui.Form.txtRTRComments.Zorder(0)
+Gui.Form.txtRTRComments.Size(317,96)
+Gui.Form.txtRTRComments.Position(719,49)
+Gui.Form.txtRTRComments.FontName("Tahoma")
+Gui.Form.txtRTRComments.FontSize(8.25)
+Gui.Form.lbl24.Create(Label,"Router",True,37,14,0,643,52,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl24.BorderStyle(0)
+Gui.Form.chkSOWOCreate.Create(CheckBox)
+Gui.Form.chkSOWOCreate.Enabled(True)
+Gui.Form.chkSOWOCreate.Visible(True)
+Gui.Form.chkSOWOCreate.Zorder(0)
+Gui.Form.chkSOWOCreate.Size(96,20)
+Gui.Form.chkSOWOCreate.Position(258,22)
+Gui.Form.chkSOWOCreate.Caption("Create SO/WO")
+Gui.Form.chkSOWOCreate.FontName("Tahoma")
+Gui.Form.chkSOWOCreate.FontSize(8.25)
+Gui.Form.chkSOWOCreate.Value(1)
+Gui.Form.chkSOWOCreate.Event(Change,chkSOWOCreate_Change)
+Gui.Form.cmdSOLookUp.Create(Button)
+Gui.Form.cmdSOLookUp.Enabled(True)
+Gui.Form.cmdSOLookUp.Visible(False)
+Gui.Form.cmdSOLookUp.Zorder(0)
+Gui.Form.cmdSOLookUp.Size(25,23)
+Gui.Form.cmdSOLookUp.Position(210,0)
+Gui.Form.cmdSOLookUp.Caption("")
+Gui.Form.cmdSOLookUp.FontName("Tahoma")
+Gui.Form.cmdSOLookUp.FontSize(8.25)
+Gui.Form.cmdSOLookUp.SvgPicture("icon_browser_color")
+Gui.Form.cmdSOLookUp.Event(Click,cmdSOLookUp_Click)
+Gui.Form.lblCustomerName.Create(Label,"",True,1,14,0,140,91,True,0,"Tahoma",9,,0,0)
+Gui.Form.lblCustomerName.BorderStyle(0)
+Gui.Form.chkFixedPrice.Create(CheckBox)
+Gui.Form.chkFixedPrice.Enabled(True)
+Gui.Form.chkFixedPrice.Visible(True)
+Gui.Form.chkFixedPrice.Zorder(0)
+Gui.Form.chkFixedPrice.Size(107,20)
+Gui.Form.chkFixedPrice.Position(197,174)
+Gui.Form.chkFixedPrice.Caption("Fixed Price Flag")
+Gui.Form.chkFixedPrice.FontName("Tahoma")
+Gui.Form.chkFixedPrice.FontSize(8.25)
+Gui.Form.lbl25.Create(Label,"Instructions:",True,68,14,0,642,66,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl25.BorderStyle(0)
+Gui.Form.lbl26.Create(Label,"Ship Name:",True,62,14,0,1055,56,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl26.BorderStyle(0)
+Gui.Form.txtTownLabor.Create(TextBox,"",True,36,20,0,854,25,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl20.Create(Label,"Town",True,32,14,0,854,8,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl20.BorderStyle(0)
+Gui.Form.txtMatMarkup.Create(TextBox,"1.34",True,53,20,0,297,174,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtMatMarkup.NumericOnly(1)
+Gui.Form.txtMatMarkup.DefaultValue("1.34")
+Gui.Form.lbl27.Create(Label,"Material Markup:",True,88,14,0,295,159,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl27.BorderStyle(0)
+Gui.Form.lbl27.ToolTip("Optional")
+Gui.Form.txtShipVia.Create(TextBox,"CUSTOMER PICKUP",True,120,20,0,397,174,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl28.Create(Label,"Ship Via:",True,47,14,0,398,159,True,0,"Tahoma",9,,0,0)
+Gui.Form.lbl28.BorderStyle(0)
+Gui.Form.lbl28.ToolTip("Optional")
+Gui.Form.txtShipViaCode.Create(TextBox,"P",False,28,20,0,451,149,False,0,"Tahoma",8.25,,1)
+Gui.Form.cmdShipViaLookUp.Create(Button)
+Gui.Form.cmdShipViaLookUp.Enabled(True)
+Gui.Form.cmdShipViaLookUp.Visible(True)
+Gui.Form.cmdShipViaLookUp.Zorder(0)
+Gui.Form.cmdShipViaLookUp.Size(25,23)
+Gui.Form.cmdShipViaLookUp.Position(522,171)
+Gui.Form.cmdShipViaLookUp.Caption("")
+Gui.Form.cmdShipViaLookUp.FontName("Tahoma")
+Gui.Form.cmdShipViaLookUp.FontSize(8.25)
+Gui.Form.cmdShipViaLookUp.SvgPicture("icon_browser_color")
+Gui.Form.cmdShipViaLookUp.Event(Click,cmdShipViaLookUp_Click)
+Gui.FormMaint..Create(BaseForm)
+Gui.FormMaint..Caption("6875 Maintenance Menu")
+Gui.FormMaint..Size(493,366)
+Gui.FormMaint..MinX(100)
+Gui.FormMaint..MinY(100)
+Gui.FormMaint..Position(0,0)
+Gui.FormMaint..AlwaysOnTop(False)
+Gui.FormMaint..FontName("Tahoma")
+Gui.FormMaint..FontSize(8.25)
+Gui.FormMaint..ControlBox(True)
+Gui.FormMaint..MaxButton(True)
+Gui.FormMaint..MinButton(True)
+Gui.FormMaint..MousePointer(0)
+Gui.FormMaint..Moveable(True)
+Gui.FormMaint..Sizeable(True)
+Gui.FormMaint..ShowInTaskBar(True)
+Gui.FormMaint..TitleBar(True)
+Gui.FormMaint..Event(UnLoad,FormMaint_UnLoad)
+Gui.FormMaint.tabMaint.Create(Tab)
+Gui.FormMaint.tabMaint.Enabled(True)
+Gui.FormMaint.tabMaint.Visible(True)
+Gui.FormMaint.tabMaint.Zorder(0)
+Gui.FormMaint.tabMaint.Size(493,336)
+Gui.FormMaint.tabMaint.Position(0,0)
+Gui.FormMaint.tabMaint.FontName("Tahoma")
+Gui.FormMaint.tabMaint.FontSize(8.25)
+Gui.FormMaint.tabMaint.Dock(5)
+Gui.FormMaint.tabMaint.Tabs(2)
+Gui.FormMaint.tabMaint.SetTab(0)
+Gui.FormMaint.tabMaint.Caption("Default Values")
+Gui.FormMaint.tabMaint.SetTab(1)
+Gui.FormMaint.tabMaint.Caption("Markup by Customer")
+Gui.FormMaint.gsMarkup.Create(GsGridControl)
+Gui.FormMaint.gsMarkup.Enabled(True)
+Gui.FormMaint.gsMarkup.Visible(True)
+Gui.FormMaint.gsMarkup.Zorder(0)
+Gui.FormMaint.gsMarkup.Size(491,257)
+Gui.FormMaint.gsMarkup.Position(0,50)
+Gui.FormMaint.gsMarkup.Dock(2)
+Gui.FormMaint.gsMarkup.Parent("tabMaint",1)
+Gui.FormMaint.gsMarkup.Event(RowCellClick,gsMarkup_RowCellClick)
+Gui.FormMaint.gsMarkup.Anchor(15)
+Gui.FormMaint.txtDFLTProg.Create(TextBox,"",True,46,20,0,11,22,True,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtDFLTProg.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTProg.NumericOnly(2)
+Gui.FormMaint.cmdSaveMaint.Create(Button)
+Gui.FormMaint.cmdSaveMaint.Enabled(True)
+Gui.FormMaint.cmdSaveMaint.Visible(True)
+Gui.FormMaint.cmdSaveMaint.Zorder(0)
+Gui.FormMaint.cmdSaveMaint.Size(75,23)
+Gui.FormMaint.cmdSaveMaint.Position(403,273)
+Gui.FormMaint.cmdSaveMaint.Caption("Save")
+Gui.FormMaint.cmdSaveMaint.FontName("Tahoma")
+Gui.FormMaint.cmdSaveMaint.FontSize(8.25)
+Gui.FormMaint.cmdSaveMaint.Parent("tabMaint",0)
+Gui.FormMaint.cmdSaveMaint.Anchor(10)
+Gui.FormMaint.cmdSaveMaint.Event(Click,cmdSaveMaint_Click)
+Gui.FormMaint.txtDFLTMatMarkup.Create(TextBox,"",True,46,20,0,7,228,True,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtDFLTMatMarkup.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTMatMarkup.NumericOnly(1)
+Gui.FormMaint.lbl4.Create(Label,"Router Instructions:",True,97,13,0,11,48,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl4.BorderStyle(0)
+Gui.FormMaint.lbl4.Parent("tabMaint",0)
+Gui.FormMaint.lbl3.Create(Label,"QA",True,15,13,0,125,5,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl3.BorderStyle(0)
+Gui.FormMaint.lbl3.Parent("tabMaint",0)
+Gui.FormMaint.lbl2.Create(Label,"Op",True,14,13,0,70,5,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl2.BorderStyle(0)
+Gui.FormMaint.lbl2.Parent("tabMaint",0)
+Gui.FormMaint.lbl1.Create(Label,"Prog",True,22,13,0,13,5,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl1.BorderStyle(0)
+Gui.FormMaint.lbl1.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTRouterInst.Create(TextboxM)
+Gui.FormMaint.txtDFLTRouterInst.Enabled(True)
+Gui.FormMaint.txtDFLTRouterInst.Visible(True)
+Gui.FormMaint.txtDFLTRouterInst.Zorder(0)
+Gui.FormMaint.txtDFLTRouterInst.Size(282,141)
+Gui.FormMaint.txtDFLTRouterInst.Position(9,65)
+Gui.FormMaint.txtDFLTRouterInst.FontName("Tahoma")
+Gui.FormMaint.txtDFLTRouterInst.FontSize(8.25)
+Gui.FormMaint.txtDFLTRouterInst.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTQA.Create(TextBox,"",True,46,20,0,122,22,True,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtDFLTQA.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTQA.NumericOnly(2)
+Gui.FormMaint.lbl5.Create(Label,"Material Markup:",True,80,13,0,8,212,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl5.BorderStyle(0)
+Gui.FormMaint.lbl5.Parent("tabMaint",0)
+Gui.FormMaint.cmdCustBrowserMaint.Create(Button)
+Gui.FormMaint.cmdCustBrowserMaint.Enabled(True)
+Gui.FormMaint.cmdCustBrowserMaint.Visible(True)
+Gui.FormMaint.cmdCustBrowserMaint.Zorder(0)
+Gui.FormMaint.cmdCustBrowserMaint.Size(25,23)
+Gui.FormMaint.cmdCustBrowserMaint.Position(316,17)
+Gui.FormMaint.cmdCustBrowserMaint.Caption("")
+Gui.FormMaint.cmdCustBrowserMaint.FontName("Tahoma")
+Gui.FormMaint.cmdCustBrowserMaint.FontSize(8.25)
+Gui.FormMaint.cmdCustBrowserMaint.SvgPicture("icon_browser_color")
+Gui.FormMaint.cmdCustBrowserMaint.Parent("tabMaint",1)
+Gui.FormMaint.cmdCustBrowserMaint.Event(Click,cmdCustBrowserMaint_Click)
+Gui.FormMaint.txtDFLTOp.Create(TextBox,"",True,46,20,0,66,22,True,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtDFLTOp.Parent("tabMaint",0)
+Gui.FormMaint.txtDFLTOp.NumericOnly(2)
+Gui.FormMaint.lbl8.Create(Label,"Name:",True,31,13,0,116,4,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl8.BorderStyle(0)
+Gui.FormMaint.lbl8.Parent("tabMaint",1)
+Gui.FormMaint.lbl7.Create(Label,"Markup:",True,39,13,0,363,4,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl7.BorderStyle(0)
+Gui.FormMaint.lbl7.Parent("tabMaint",1)
+Gui.FormMaint.lbl6.Create(Label,"Customer:",True,50,13,0,6,4,True,0,"Tahoma",8.25,,0,0)
+Gui.FormMaint.lbl6.BorderStyle(0)
+Gui.FormMaint.lbl6.Parent("tabMaint",1)
+Gui.FormMaint.cmdAddMarkup.Create(Button)
+Gui.FormMaint.cmdAddMarkup.Enabled(True)
+Gui.FormMaint.cmdAddMarkup.Visible(True)
+Gui.FormMaint.cmdAddMarkup.Zorder(0)
+Gui.FormMaint.cmdAddMarkup.Size(51,23)
+Gui.FormMaint.cmdAddMarkup.Position(428,18)
+Gui.FormMaint.cmdAddMarkup.Caption("Add")
+Gui.FormMaint.cmdAddMarkup.FontName("Tahoma")
+Gui.FormMaint.cmdAddMarkup.FontSize(8.25)
+Gui.FormMaint.cmdAddMarkup.Event(Click,cmdAddMarkup_Click)
+Gui.FormMaint.cmdAddMarkup.Parent("tabMaint",1)
+Gui.FormMaint.txtMarkup.Create(TextBox,"1.34",True,59,20,0,361,19,True,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtMarkup.Parent("tabMaint",1)
+Gui.FormMaint.txtMarkup.NumericOnly(1)
+Gui.FormMaint.txtCustCode.Create(TextBox,"",True,100,20,0,4,19,False,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtCustCode.Parent("tabMaint",1)
+Gui.FormMaint.txtCustName.Create(TextBox,"",True,196,20,0,113,19,False,0,"Tahoma",8.25,,1)
+Gui.FormMaint.txtCustName.Parent("tabMaint",1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("6021.lib")
+Program.External.Include.Library("6004.lib")
+Program.External.Include.Library("200800.lib")
+
+v.Global.bPassedFirstLoad.Declare
+v.Global.bLoading.Declare
+v.Global.bCreatingPO.Declare
+v.Global.bResetting.Declare
+v.Global.bResetColumn.Declare
+v.Global.bExporting.Declare
+v.Global.iCurrentRowIndex.Declare
+v.Global.bIsInGroup.Declare
+v.Global.iRunIDToApprove.Declare
+V.Global.bLoadingRunID.Declare
+v.Global.iRunIDToView.Declare
+v.global.sfileupload.Declare
+
+V.Global.iPROG.Declare
+V.Global.iOP.Declare
+V.Global.iQA.Declare
+V.Global.sRouterInstr.Declare
+V.Global.fMarkup.Declare
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'SS, August 2022
+'Customer: Sheet Metalcraft
+'Buisness Purpose: Import Inventory parts and routers to GSS from Sigmanest
+
+'Portions of this dashboard were inspired by The Great BN in ARC 6772
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+f.Intrinsic.Control.Try	
+	f.ODBC.Connection!conx.OpenCompanyConnection(300)	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	f.Intrinsic.Control.CallSub(CheckFolder)
+	f.Intrinsic.Control.CallSub(checkTable) 'checks if the tables is alread y made if not will make it
+	f.Intrinsic.Control.CallSub(LoadDefaultValues)
+	
+	gui.Form..BarAddButton("MaintMenu","",V.Enum.Image!SETTINGS_COLOR,,True)
+	
+	F.Intrinsic.Task.SetEnvironmentVariable("USEDARKTHEME",False)
+	gui.Form..applytheme()	
+	
+	'Add Item to accordion
+	Gui.Form.ac1.AddElement(ServiceWeb,"Service Web","logo_g_green_32",16,16,,-1,0,"",True,True,False,1)
+	Gui.Form.ac1.AddElement(PullDataFromSigmanest,"Pull Data From Sigmanest","icon_functions_black",16,16,,-1,0,"",True,True,False,1)
+	Gui.Form.ac1.AddElement(BuildParts,"Build Parts and Routers","icon_functions_black",16,16,,-1,0,"",True,True,False,1)
+	Gui.Form.ac1.AddElement(ImportParts,"Import Parts and Routers","icon_functions_black",16,16,,-1,0,"",True,True,False,1)
+	
+	f.Intrinsic.Control.CallSub(Create_ContextMenu)
+	
+	'Build suplementary data
+	F.Data.Dictionary.CreateFromSQL("dictShipVia","conx","select RTRIM(ID) as ID, RTRIM(MESSAGE) as MESSAGE from SHIP_VIA")
+	F.Data.Dictionary.SetDefaultReturn("dictShipVia","")
+	
+	gui.Form..Show
+	gui.Form.tab1.SetTab(0)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+#Region "UnloadCatch"
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	F.Intrinsic.String.Build("Project: {5} {0}Subroutine: {1}{0}Error Occurred {2} with description {3}{0}GAB Version: {4}",V.Ambient.Newline,V.Args.SUB,V.Args.errorno,V.Args.errordesc,V.Ambient.GABVersion,v.Caller.ScriptFile,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.If(V.Global.bPassedFirstLoad)
+		'F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry	
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try	
+
+	f.Intrinsic.Control.If(v.ODBC.conx.Exists)
+		F.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.ODBC.conSQL.Exists)
+		F.ODBC.Connection!conSQL.Close
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.End 
+	
+f.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.FormMaint_UnLoad.Start
+Gui.Form..Enabled(True)
+Gui.FormMaint..Visible(False)
+
+Program.Sub.FormMaint_UnLoad.End
+
+#End Region 'UnloadCatch
+
+
+#Region "Initialize"
+Program.Sub.CheckFolder.Start
+f.Intrinsic.Control.Try
+	v.Local.sDir.Declare
+	v.Local.bExist.Declare
+	
+	f.Intrinsic.String.Build("{0}\Custom\6875\{1}",v.Caller.GlobalDir,v.Caller.CompanyCode,v.Local.sDir)
+	f.Intrinsic.File.DirExists(v.Local.sDir,v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDir)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.CheckFolder.End
+
+Program.Sub.checkTable.Start
+f.Intrinsic.Control.Try
+	v.Local.bCheck.Declare
+	v.Local.sRet.Declare
+	v.Local.sVat.Declare
+	v.Local.i.Declare
+	v.Local.sMsg.Declare
+
+	'GAB_6875_Markup_by_Cust
+	f.ODBC.Connection!conx.tableExists("GAB_6875_Markup_by_Cust",V.Local.bCheck)
+	F.Intrinsic.Control.If(V.Local.bCheck,=,False)
+		f.ODBC.Connection!conx.execute("CREATE TABLE GAB_6875_Markup_by_Cust( CUSTOMER Char(6),MARKUP DOUBLE);")
+	F.Intrinsic.Control.EndIf
+	
+	'GAB_6875_Maintenance
+	f.ODBC.Connection!conx.tableExists("GAB_6875_Maintenance",V.Local.bCheck)
+	F.Intrinsic.Control.If(V.Local.bCheck,=,False)
+		f.ODBC.Connection!conx.execute("CREATE TABLE GAB_6875_Maintenance( PROG INTEGER,OP INTEGER,QA INTEGER,MARKUP DOUBLE,ROUTER_INSTR2 VARCHAR(100));")
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.checkTable.End
+
+Program.Sub.LoadDefaultValues.Start
+f.Intrinsic.Control.Try
+	v.Local.bCheck.Declare
+	v.Local.sRet.Declare
+	v.Local.sVat.Declare
+	v.Local.i.Declare
+	v.Local.sMsg.Declare
+
+	F.ODBC.Connection!conx.ExecuteAndReturn("select Top 1 PROG, OP, QA, MARKUP, ROUTER_INSTR2 from GAB_6875_Maintenance;",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("No default values found for PROG, OP, QA, Markup, and Router instructions. Please check the maintenance menu in the top left corner.")
+		V.Global.iPROG.Set(30)
+		V.Global.iOP.Set(30)
+		V.Global.iQA.Set(10)
+		V.Global.fMarkup.Set(1.34)
+		V.Global.sRouterInstr.Set("")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Global.iPROG.Set(V.Local.sRet(0).long)
+		V.Global.iOP.Set(V.Local.sRet(1).long)
+		V.Global.iQA.Set(V.Local.sRet(2).long)
+		V.Global.fMarkup.Set(V.Local.sRet(3).float)
+		V.Global.sRouterInstr.Set(V.Local.sRet(4))
+	F.Intrinsic.Control.EndIf
+	
+	gui.Form.txtSetupProg.Text(V.Global.iPROG)
+	gui.Form.txtSetupOp.Text(V.Global.iOP)
+	gui.Form.txtSetupQA.Text(V.Global.iQA)
+	gui.Form.txtMatMarkup.Text(V.Global.fMarkup)
+	gui.Form.txtRTRComments.Text(V.Global.sRouterInstr)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadDefaultValues.End
+
+Program.Sub.ac1_ElementClick.Start
+f.Intrinsic.Control.Try
+	v.Local.iRet.Declare
+	v.Local.bAuth.Declare
+	
+	
+	'This will prevent from multi-clicking too fast the button
+	f.Intrinsic.Control.If(v.Global.bLoading)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Global.bLoading.Set(True)	
+	
+	gui.Form.lblPleasewait.Visible(True)
+	gui.Form.lblpleasewait.Text("Please wait ...")		
+	
+	f.Intrinsic.Control.SelectCase(v.Args.ElementID.UCase)
+		f.Intrinsic.Control.Case("SERVICEWEB")
+			F.Intrinsic.Task.ShellExec(0,"Open","https://www.gss-service.com/","","",0)	
+	
+		f.Intrinsic.Control.Case("PULLDATAFROMSIGMANEST")
+			F.Intrinsic.Control.CallSub(Load_Sigmanest)
+			
+		f.Intrinsic.Control.Case("BUILDPARTS")
+			F.Intrinsic.Control.CallSub(Load_Parts)
+		
+		f.Intrinsic.Control.Case("IMPORTPARTS")
+			F.Intrinsic.UI.Msgbox("Are you sure you would like to create the selected parts and routers in GSS?","Import to GSS",4,V.Local.iRet)
+			F.Intrinsic.Control.If(V.Local.iRet,<>,6)
+				v.Global.bPassedFirstLoad.Set(True)
+				gui.Form.lblPleasewait.Visible(False)	
+				v.Global.bLoading.Set(False)
+				f.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Screen.Form!txtCustomer.Text,<>,"")
+				F.Intrinsic.Control.CallSub(Create_Parts)
+				gui.Form.txtCustomer.BackColor(v.Color.White)
+				
+				'Clear screen
+				F.Intrinsic.UI.Msgbox("Would you like to clear the screen?","Import Complete",4,V.Local.iRet)
+				F.Intrinsic.Control.If(V.Local.iRet,=,6)
+					F.Intrinsic.Control.CallSub(ClearScreen)
+				F.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.Else
+				gui.Form.txtCustomer.BackColor(v.Color.LtRed)
+			f.Intrinsic.Control.EndIf
+			
+			
+			
+	f.Intrinsic.Control.EndSelect
+	
+	v.Global.bPassedFirstLoad.Set(True)
+	gui.Form.lblPleasewait.Visible(False)	
+	gui.Form.lblLastRefresh.Text(v.Ambient.Now)
+	v.Global.bLoading.Set(False)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ac1_ElementClick.End
+
+'Currently dont want to use user button (Leaving it here for possible future features)
+Program.Sub.Form_UserButtonClicked.Start
+f.Intrinsic.Control.Try	
+
+	F.Intrinsic.Control.SelectCase(V.Args.Button)			
+		F.Intrinsic.Control.Case("MaintMenu")
+			Gui.Form..Enabled(False)
+			
+			'Load screen
+			F.Intrinsic.Control.CallSub(LoaddtMarkup)
+			Gui.FormMaint.txtDFLTProg.Text(V.Global.iPROG)
+			Gui.FormMaint.txtDFLTOp.Text(V.Global.iOP)
+			Gui.FormMaint.txtDFLTQA.Text(V.Global.iQA)
+			Gui.FormMaint.txtDFLTMatMarkup.Text(V.Global.fMarkup)
+			Gui.FormMaint.txtDFLTRouterInst.Text(V.Global.sRouterInstr)
+			
+			'Show screen.
+			Gui.FormMaint..Show
+			Gui.FormMaint..SetFocus
+			Gui.FormMaint.tabMaint.SetTab(0)
+			
+	F.Intrinsic.Control.EndSelect
+'		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UserButtonClicked.End
+
+
+
+'Currently dont want to use context menus (Leaving it here for possible future features)
+Program.Sub.Create_ContextMenu.Start
+f.Intrinsic.Control.Try
+	
+	'Sigmanest grid
+	Gui.Form..ContextMenuCreate("ctxSigmanest")
+	gui.Form.gsSigmanest.ContextMenuAttach("ctxSigmanest")
+	Gui.Form..ContextMenuAddItem("ctxSigmanest","SelectAll",0,"Select All")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxSigmanest","SelectAll","SelectAll")
+	
+	Gui.Form..ContextMenuAddItem("ctxSigmanest","DeselectAll",0,"Deselect All")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxSigmanest","DeselectAll","DeselectAll")
+	
+	'Parts grid
+	Gui.Form..ContextMenuCreate("ctxParts")
+	gui.Form.gsParts.ContextMenuAttach("ctxParts")
+	Gui.Form..ContextMenuAddItem("ctxParts","SelectAll",0,"Select All")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxParts","SelectAll","SelectAll")
+	
+	Gui.Form..ContextMenuAddItem("ctxParts","DeselectAll",0,"Deselect All")
+	Gui.Form..ContextMenuSetItemEventHandler("ctxParts","DeselectAll","DeselectAll")
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Create_ContextMenu.End
+
+Program.Sub.ClearScreen.Start
+F.Intrinsic.Control.Try
+	
+	gui.Form.txtSalesOrderNumber.Text("")
+	gui.Form.txtCustomer.Text("")
+	gui.Form.lblCustomerName.Caption("")
+	gui.Form.txtCustomerPO.Text("")
+	gui.Form.txtSalesOrderFixedPrice.Text("0.00")
+	gui.Form.chkFixedPrice.Value(False)
+	gui.Form.chkSOWOCreate.Value(True)
+	gui.Form.txtDescriptor.Text("")
+	gui.Form.txtShipToID.Text("")
+	gui.Form.txtExtraNotes.Text("")
+	gui.Form.txtSetupPressProg.Text("")
+	gui.Form.txtSetupDener.Text("")
+	gui.Form.txtSetupDebur.Text("")
+	gui.Form.txtSetupTap.Text("")
+	gui.Form.txtSetupPVC.Text("")
+	gui.Form.txtTownLabor.Text("")
+	gui.Form.txtShipVia.Text("CUSTOMER PICKUP")
+	gui.Form.txtShipViaCode.Text("P")
+	gui.Form.txtShipName.Text("")
+	gui.Form.txtAddress1.Text("")
+	gui.Form.txtAddress2.Text("")
+	gui.Form.txtAddress3.Text("")
+	'gui.Form.txtShipCity.Text("")
+	'gui.Form.txtShipCountry.Text("")
+	gui.Form.txtShipZip.Text("")
+	gui.Form.txtShipAttn.Text("")
+	gui.Form.txtPhone.Text("")
+
+	'Pulled from defaults in maint menu.
+	gui.Form.txtSetupProg.Text(V.Global.iPROG)
+	gui.Form.txtSetupOp.Text(V.Global.iOP)
+	gui.Form.txtSetupQA.Text(V.Global.iQA)
+	gui.Form.txtMatMarkup.Text(V.Global.fMarkup)
+	gui.Form.txtRTRComments.Text(V.Global.sRouterInstr)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ClearScreen.End
+
+#End Region 'Initialize
+
+
+Program.Sub.SelectAll.Start
+f.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.SelectCase(V.Screen.Form!tab1.Tab)
+	F.Intrinsic.Control.Case(0)
+		'Sigmanest Tab
+		f.Intrinsic.Control.If(v.DataTable.dtSigmanest.Exists)
+			F.Data.Dictionary.CreateFromDatatable("dictSelect","dtSigmanest","PartName","NEW_PART")
+			F.Data.Dictionary.SetDefaultReturn("dictSelect",True)
+			F.Data.Datatable.FillFromDictionary("dtSigmanest","dictSelect","PartName","SELECT")
+			F.Data.Dictionary.Close("dictSelect")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Case(1)
+		'Parts and Routers Tab
+		f.Intrinsic.Control.If(v.DataTable.dtParts.Exists)
+			F.Data.Dictionary.CreateFromDatatable("dictSelect","dtParts","PartName","NEW_PART")
+			F.Data.Dictionary.SetDefaultReturn("dictSelect",True)
+			F.Data.Datatable.FillFromDictionary("dtParts","dictSelect","PartName","SELECT")
+			F.Data.Dictionary.Close("dictSelect")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.SelectAll.End
+
+
+Program.Sub.DeselectAll.Start
+f.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.SelectCase(V.Screen.Form!tab1.Tab)
+	F.Intrinsic.Control.Case(0)
+		'Sigmanest Tab
+		f.Intrinsic.Control.If(v.DataTable.dtSigmanest.Exists)
+			F.Data.Datatable.SetValue("dtSigmanest",-1,"Select",False)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Case(1)
+		'Parts and Routers Tab
+		f.Intrinsic.Control.If(v.DataTable.dtParts.Exists)
+			F.Data.Datatable.SetValue("dtParts",-1,"Select",False)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.DeselectAll.End
+
+'Why isnt this flushed out? need to flush it out
+Program.Sub.Form_ExportClick.Start
+F.Intrinsic.Control.Try	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.sMsg.Declare
+	V.Local.sControl.Declare
+	V.Local.sForm.Declare(String, "Form")
+	V.Local.sDate.Declare
+	V.Local.sTime.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sExportString.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.Form!tab1.Tab,=,0)
+		V.Local.sControl.Set("gsSigmanest")
+	F.Intrinsic.Control.Else
+		V.Local.sControl.Set("gsParts")
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.bPassedFirstLoad.Not)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.bExporting)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Global.bExporting.Set(True)
+
+
+	'Arc Number - 6875
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+	F.Intrinsic.String.TimeString(V.Ambient.Time,V.Local.sTime)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\GCG_6875_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			'Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+			Gui.[V.Local.sForm].[V.Local.sControl].ExportDetails("xlsx", V.Local.sFileExport,1)
+
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\GCG_6875_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+	
+	v.Global.bExporting.Set(False)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Form_ExportClick.End
+
+#Region "Tab Sigmanest"
+Program.Sub.Load_Sigmanest.Start
+f.Intrinsic.Control.Try
+	V.Local.sBegDate.Declare
+	V.Local.sEndDate.Declare
+	V.Local.dBegDate.Declare
+	V.Local.dEndDate.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	V.local.iCnt.Declare
+	v.Local.sSerialize.Declare
+	v.Local.sProgrammedBy.Declare
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSigmanest.Exists)
+		f.Data.DataTable.Close("dtSigmanest")
+		gui.Form.gsSigmanest.ClearRows("gvSigmanest")		
+	f.Intrinsic.Control.EndIf
+
+	
+	'Saving these lines incase we want to add a date range later - ss
+	'V.Local.dBegDate.Set(V.Screen.Form!dtpStartDate.Value)
+	'V.Local.dEndDate.Set(V.Screen.Form!dtpEndDate.Value)
+'	F.Intrinsic.String.Format(V.Screen.Form!dtpStartDate.Value,"DD-MM-YYYY",V.Local.sBegDate)
+'	F.Intrinsic.String.Format(V.Screen.Form!dtpEndDate.Value,"DD-MM-YYYY",V.Local.sEndDate)
+	
+	v.Local.sProgrammedBy.Set(V.Screen.Form!txtProgrammedby.Text)
+	'Hardcodeing the Connection to the Sigmanest server
+	F.ODBC.Connection!conSQL.openconnection("Driver={SQL Server}; Server=SMC2K15\SIGMANEST; Database=SNDBaseX1.3; User Id=SNUser; Password=BestNest1445")
+	
+	'F.Intrinsic.String.Build("Select RTRIM(PartName) as PartName, DrawingNumber, ProgrammedBy, Data1, QtyOrdered, QtyCompleted, DueDate, Rtrim(Material) as Material, Cast(Thickness as Float) as Thickness, Cast(Cuttingtime as Float) as Cuttingtime, Cast(NetArea as Float) as NetArea, Cast(RectArea as Float) as RectArea, Cast(PartLength as Float) as PartLength, Cast(PartWidth as Float) as PartWidth, Cast(Netweight as Float) as Netweight, Cast(RectWeight as Float) as RectWeight From PART where PROGRAMMEDBY = '{0}'",v.Local.sProgrammedBy.Trim,V.Local.sSQL)
+	'F.Intrinsic.String.Build("Select RTRIM(PartName) as PartName, DrawingNumber, ProgrammedBy, Data1, QtyOrdered, QtyCompleted, DueDate, Rtrim(Material) as Material, Cast(Thickness as Float) as Thickness, Cast(Cuttingtime as Float) as Cuttingtime, Cast(NetArea as Float) as NetArea, Cast(RectArea as Float) as RectArea, Cast(PartLength as Float) as PartLength, Cast(PartWidth as Float) as PartWidth, Cast(Netweight as Float) as Netweight, Cast(RectWeight as Float) as RectWeight From PART {0}","",V.Local.sSQL)
+	F.Intrinsic.String.Build("Select RTRIM(PartName) as PartName, DrawingNumber, ' ' as PartDrawing, ProgrammedBy, Data1 as 'Data1',Data3 as 'Data3',Data5 as 'Data5', QtyOrdered as QtyOrdered, QtyCompleted as QtyCompleted, DueDate, Rtrim(Material) as Material, Cast(Thickness as Float) as Thickness, Cast(Cuttingtime as Float) as Cuttingtime, Cast(NetArea as Float) as NetArea, Cast(RectArea as Float) as RectArea, Cast(PartLength as Float) as PartLength, Cast(PartWidth as Float) as PartWidth, Cast(ActualWeight as Float) as Netweight, Cast(RectWeight as Float) as RectWeight From PART where WONumber= '{0}-001'",v.Screen.Form!txtSalesOrderNumber.Text,V.Local.sSQL)
+	
+	F.Data.Datatable.CreateFromSQL("dtSigmanest","conSQL",V.Local.sSQL,True)
+
+	'New Table
+	'PartName = PartName
+	'DrawingNumber = DrawingNumber
+	'Programmedby = ProgrammedBy
+	'Data1 = PartData1
+	'QtyOrdered = Qty
+	'QtyCompleted = Qty
+	'DueDate = Due Date
+	'Material = Material
+	'Thickness = Thickness
+	'PartCuttingtime = CuttingTime
+	'Area = NetArea
+	'RectArea = RectArea
+	'PartLength = PartLength
+	'PartWidth = PartWidth
+	'Netweight = ActualWeight 
+	'RectWeight = RectWeight
+	
+	F.Data.Datatable.AddColumn("dtSigmanest","SELECT","Boolean",True)
+	F.Data.Datatable.AddExpressionColumn("dtSigmanest","Description_30","String","SUBSTRING([PARTNAME],1,30)")
+	F.Data.Datatable.AddColumn("dtSigmanest","PARTSPLIT","String","")
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtSigmanest.RowCount--,1)
+		F.Intrinsic.String.Split(V.DataTable.dtSigmanest(V.Local.iCnt).PARTNAME!Fieldval," ",V.Local.sRet)
+		V.Local.sRet(0).Set(V.Local.sRet(0).UCase)
+		F.Data.Datatable.SetValue("dtSigmanest",V.Local.iCnt,"PARTSPLIT",V.Local.sRet(0))
+	F.Intrinsic.Control.Next(V.local.iCnt)
+	F.ODBC.Connection!conSQL.Close
+	
+	'Taking the first 17 characters as the GSS part name
+	F.Data.Datatable.AddExpressionColumn("dtSigmanest","Part_17","String","SUBSTRING([PARTSPLIT],1,17)")
+	
+	'Checking if the parts already exists in GSS y checking the INV_EXTRA_TEXT table 
+	'F.Data.Dictionary.CreateFromSQL("dictNewPart","conx","select RTRIM(PART) as part, Cast(0 as bit) as false From V_INVENTORY_MSTR")
+	'F.Data.Dictionary.SetDefaultReturn("dictNewPart",True)
+	F.Data.Datatable.AddColumn("dtSigmanest","NEW_PART","Boolean",True)
+	'F.Data.Datatable.FillFromDictionary("dtSigmanest","dictNewPart","Part_17","NEW_PART")
+	'F.Data.Datatable.FillFromDictionary("dtSigmanest","dictNewPart","Part_17","SELECT")
+	'F.Data.Dictionary.Close("dictNewPart")
+	
+	gui.Form.gsSigmanest.AddGridviewFromDatatable("gvSigmanest","dtSigmanest")
+	
+	f.Intrinsic.Control.CallSub(Format_Sigmanest)
+	
+	gui.Form.gsSigmanest.MainView("gvSigmanest")	
+	gui.Form.tab1.SetTab(0)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Load_Sigmanest.End
+
+Program.Sub.Format_Sigmanest.Start
+	V.Local.sProp.Declare
+	v.Local.sValue.Declare	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	v.Local.sValue2.Declare
+	v.Local.sValue3.Declare
+	
+	gui.Form.gsSigmanest.SuspendLayout()
+	
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","MultiSelect",True)
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","AllowSort",True)
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","AllowFilter",True)
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","OptionsDetailShowDetailTabs",False)
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","OptionsViewShowGroupPanel",True)
+	gui.Form.gsSigmanest.SetGridViewProperty("gvSigmanest","EnableAppearanceOddRow",True)
+	gui.Form.gsSigmanest.SetGridviewProperty("gvSigmanest",v.Enum.GridViewPropertyNames!ShowAutoFilterRow,True)
+	gui.Form.gsSigmanest.SetGridviewProperty("gvSigmanest","OptionsViewColumnAutoWidth",False)
+	gui.Form.gsSigmanest.SetGridviewProperty("gvSigmanest","AllowColumnResizing",True)	
+	gui.Form.gsSigmanest.SetGridviewProperty("gvSigmanest","ColumnPanelRowHeight","50")
+	gui.Form.gsSigmanest.SetGridviewProperty("gvSigmanest",v.Enum.GridViewPropertyNames!SuppressNothingDates,True)	
+	
+	f.Intrinsic.Control.CallSub(Bulk_Format_Sigmanest,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Sigmanest,"sProp","HeaderFontBold","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Sigmanest,"sProp","HeaderWordWrap","sValue","wrap")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Sigmanest,"sProp","HeaderVAlignment","sValue","Top")	
+	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART","Visible",False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName","Visible",False)
+	v.Local.sProp.Set("VisibleIndex")
+	v.Local.iCnt.Set(-1)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,v.Local.iCnt.++)
+	'gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,v.Local.iCnt.++)
+	'gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DrawingNumber",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data1",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data3",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data5",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,v.Local.iCnt.++)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,v.Local.iCnt.++)
+
+
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("Near")
+	v.Local.sValue2.Set("Center")
+	v.Local.sValue3.Set("Far")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,v.Local.sValue)
+	
+	v.Local.sProp.Set("CellHAlignment")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,v.Local.sValue)
+	
+	v.Local.sProp.Set("Caption")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,"Select")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,"Part Name")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,"Qty Ordered")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,"Qty Completed")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,"Due Date")	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,"Material")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,"Thickness")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,"Cutting Time")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,"Net Area")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,"Rect Area")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,"Part Length")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,"Part Width")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,"Net Weight")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,"Rect Weight")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,"New Part")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,"Description Char(30)")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data3",v.Local.sProp,"Customer PO (Data3)")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data5",v.Local.sProp,"SMC WO & Client (Data5)")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data1",v.Local.sProp,"Sales Order (Data1)")
+			
+	
+	v.Local.sProp.Set("Width")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,"40")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,"170")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,"90")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,"90")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,"100")	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,"100")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,"40")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,"100")
+	
+	
+	'For RowCellClick and CellValueChanged
+	v.Local.sProp.Set("AllowEdit")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,False)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,False)
+
+	v.Local.sProp.Set("ReadOnly")
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,True)	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Local.sProp,False)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Local.sProp,True)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DESCRIPTION_30",v.Local.sProp,True)
+	
+	'BackForeColor
+'	v.Local.sProp.Set("CellBackColor")
+'	v.Local.sValue.Set("LightYellow")
+	'gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Note",v.Local.sProp,v.Local.sValue)
+	
+	v.Local.sProp.Set("DisplayCustomDatetime")
+	v.Local.sValue.Set("d")	
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Local.sProp,v.Local.sValue)
+	
+	gui.Form.gsSigmanest.AddStyleFormatCondition("gvSigmanest","NEW_PART","NEW_PART","Expression","[NEW_PART] = 0")
+	gui.Form.gsSigmanest.SetStyleFormatConditionProperty("gvSigmanest","NEW_PART","NEW_PART","backcolor","Red")
+	
+	gui.Form.gsSigmanest.ResumeLayout()
+
+Program.Sub.Format_Sigmanest.End
+
+Program.Sub.Bulk_Format_Sigmanest.Start
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","SELECT",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartName",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyOrdered",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","QtyCompleted",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DueDate",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Material",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Thickness",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Cuttingtime",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NetArea",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectArea",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartLength",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","PartWidth",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Netweight",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","RectWeight",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Description_30",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","NEW_PART",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","DrawingNumber",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data3",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data5",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsSigmanest.SetColumnProperty("gvSigmanest","Data1",v.Args.sProp,v.Args.sValue)
+Program.Sub.Bulk_Format_Sigmanest.End
+
+#End Region 'Tab Sigmanest
+
+#Region "Tab Parts"
+Program.Sub.Load_Parts.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	V.Local.iCnt.Declare
+	
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSigmanest.Exists)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtParts.Exists)
+		f.Data.DataTable.Close("dtParts")
+		gui.Form.gsParts.ClearRows("gvParts")
+	f.Intrinsic.Control.EndIf
+	
+	
+	'Find the rows that are selected and put them into the dtPart table
+	F.Data.DataView.Create("dtSigmanest","dvSigmanest","22","[Select] = True","")
+	F.Data.DataView.ToDataTable("dtSigmanest","dvSigmanest","dtParts",True)
+	F.Data.DataView.Close("dtSigmanest","dvSigmanest")
+	
+	F.Intrinsic.Control.If(v.DataTable.dtParts.RowCount,=,0)
+		'No data or no rows selected
+		F.Intrinsic.UI.Msgbox("No Data, please select rows from the Sigmanest Tab")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Split the sigmanest part name on the first space and take the left of it char(17) as the gss part name 
+'	F.Data.Datatable.AddColumn("dtParts","PARTSPLIT","String","")
+'	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtParts.RowCount--,1)
+'		F.Intrinsic.String.Split(V.DataTable.dtParts(V.Local.iCnt).PARTNAME!Fieldval," ",V.Local.sRet)
+'		V.Local.sRet(0).Set(V.Local.sRet(0).UCase)
+'		F.Data.Datatable.SetValue("dtParts",V.Local.iCnt,"PARTSPLIT",V.Local.sRet(0))
+'	F.Intrinsic.Control.Next(V.local.iCnt)
+'	
+'	'Taking the first 17 characters as the GSS part name
+'	F.Data.Datatable.AddExpressionColumn("dtParts","Part_17","String","SUBSTRING([PARTSPLIT],1,17)")
+
+	F.Data.Datatable.AddExpressionColumn("dtParts","PL","String","'MF'")
+	F.Data.Datatable.AddExpressionColumn("dtParts","SOURCE_CODE","String","'MJ'")
+	F.Data.Datatable.AddExpressionColumn("dtParts","UM","String","'EA'")
+	
+	
+	'Converting cutting time (s) -> (hr) with decimals
+	F.Data.Datatable.AddExpressionColumn("dtParts","Cutting_Time_HR","Float","[CUTTINGTIME] / 3600")
+	
+	'Converting Rect and net Area from mm^2 to m^2
+	F.Data.Datatable.AddExpressionColumn("dtParts","RectArea_M","Float","[RectArea] / 1000000")
+	F.Data.Datatable.AddExpressionColumn("dtParts","NetArea_M","Float","[NetArea] / 1000000")
+
+	'Obtain issued material
+	F.Intrinsic.Control.CallSub(Match_Material)
+	
+	F.Data.Dictionary.Create("dictNoMat")
+	F.Data.Dictionary.AddItem("dictNoMat","***NOMATFOUND***",False)
+	F.Data.Dictionary.SetDefaultReturn("dictNoMat",True)
+	F.Data.Datatable.FillFromDictionary("dtParts","dictNoMat","ISSUED_MATERIAL_TEMP","SELECT")
+	F.Data.Dictionary.Close("dictNoMat")
+	
+	gui.Form.gsParts.AddGridviewFromDatatable("gvParts","dtParts")	
+	f.Intrinsic.Control.CallSub(Format_Parts)	
+	
+	gui.Form.gsParts.MainView("gvParts")
+	gui.Form.tab1.SetTab(1)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Load_Parts.End
+
+Program.Sub.Match_Material.Start
+F.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.If(v.DataTable.dtMaterial.Exists)
+		f.Data.DataTable.Close("dtMaterial")
+	f.Intrinsic.Control.EndIf
+	
+	'Obtain issued material
+	F.Data.DataTable.CreateFromSQL("dtMaterial","conx","Select RTRIM(PART) as PART, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(TEXT_INFO2) as TEXT_INFO2, RTRIM(TEXT_INFO1) as TEXT_INFO1, LENGTH, WIDTH, THICKNESS, AMT_ALT_COST from V_INVENTORY_ALL where UM_INVENTORY = 'M2' and TEXT_INFO2 <> '' and LENGTH <> 0 and WIDTH <> 0 and Length < '4000' Order by LENGTH Desc, WIDTH Desc, Part Desc",True)	
+	
+	'Create Material key in the issue material dt
+	F.Data.Datatable.AddExpressionColumn("dtMaterial","D_Thickness","String","Convert([THICKNESS],System.Double)")
+	F.Data.Datatable.AddExpressionColumn("dtMaterial","MatKey","String","[D_Thickness] + [TEXT_INFO2]")
+
+	
+	'Create Material key in the Sigmanest/FGParts dt
+	F.Data.Datatable.AddExpressionColumn("dtParts","D_Thickness","String","Convert([THICKNESS],System.Double)")
+	F.Data.Datatable.AddExpressionColumn("dtParts","MatKey","String","[D_Thickness] + [Material]")
+	
+	'Fill dtParts with initial guess of the material
+	F.Data.Datatable.AddColumn("dtParts","ISSUED_MATERIAL_TEMP","String","")
+	F.Data.Datatable.AddColumn("dtParts","ISSUED_MATERIAL_TEMP_BACKUP","String","")
+	F.Data.Dictionary.CreatefromDatatable("dictMat","dtMaterial","MatKey","Part")
+	F.Data.Dictionary.SetDefaultReturn("dictMat","***NOMATFOUND***")
+	F.Data.DataTable.FillFromDictionary("dtParts","dictMat","MatKey","ISSUED_MATERIAL_TEMP")
+	F.Data.DataTable.FillFromDictionary("dtParts","dictMat","MatKey","ISSUED_MATERIAL_TEMP_BACKUP")
+	F.Data.Dictionary.Close("dictMat")
+	
+	'Fill dtParts with initial guess of the material description
+	F.Data.Datatable.AddColumn("dtParts","ISSUED_MATERIAL_DESC","String","")
+	F.Data.Dictionary.CreatefromDatatable("dictMat","dtMaterial","MatKey","DESCRIPTION")
+	F.Data.Dictionary.SetDefaultReturn("dictMat","")
+	F.Data.DataTable.FillFromDictionary("dtParts","dictMat","MatKey","ISSUED_MATERIAL_DESC")
+	F.Data.Dictionary.Close("dictMat")
+	
+	'Fill dtParts with initial guess of the material length
+	F.Data.Datatable.AddColumn("dtParts","MAT_LENGTH","Float",0.00)
+	F.Data.Dictionary.CreatefromDatatable("dictLength","dtMaterial","MatKey","LENGTH")
+	F.Data.Dictionary.SetDefaultReturn("dictLength",0.00)
+	F.Data.DataTable.FillFromDictionary("dtParts","dictLength","MatKey","MAT_LENGTH")
+	F.Data.Dictionary.Close("dictLength")
+	
+	'Fill dtParts with initial guess of the material Width
+	F.Data.Datatable.AddColumn("dtParts","MAT_WIDTH","Float",0.00)
+	F.Data.Dictionary.CreatefromDatatable("dictWidth","dtMaterial","MatKey","WIDTH")
+	F.Data.Dictionary.SetDefaultReturn("dictWidth",0.00)
+	F.Data.DataTable.FillFromDictionary("dtParts","dictWidth","MatKey","MAT_WIDTH")
+	F.Data.Dictionary.Close("dictWidth")
+	
+	'Fill dtParts with initial guess of the material Cost
+	F.Data.Datatable.AddColumn("dtParts","MAT_COST","Float",0.00)
+	F.Data.Dictionary.CreatefromDatatable("dictCost","dtMaterial","MatKey","AMT_ALT_COST")
+	F.Data.Dictionary.SetDefaultReturn("dictCost",0.00)
+	F.Data.DataTable.FillFromDictionary("dtParts","dictCost","MatKey","MAT_COST")
+	F.Data.Dictionary.Close("dictCost")
+	
+	'Fill dtParts with material laser cut op code
+	F.Data.Datatable.AddColumn("dtParts","OP_CODE","String","")
+	F.Data.Dictionary.CreatefromDatatable("dictMat","dtMaterial","MatKey","TEXT_INFO1")
+	F.Data.Dictionary.SetDefaultReturn("dictMat","")
+	F.Data.DataTable.FillFromDictionary("dtParts","dictMat","MatKey","OP_CODE")
+	F.Data.Dictionary.Close("dictMat")
+	
+	
+'	F.Data.Datatable.AddExpressionColumn("dtParts","LENGTH_CHECK","Long","IIF([LENGTH] < [MAT_LENGTH],1,0)")
+'	F.Data.Datatable.AddExpressionColumn("dtParts","WIDTH_CHECK","Long","IIF([WIDTH] < [MAT_WIDTH],1,0)")
+'	F.Data.Datatable.AddExpressionColumn("dtParts","LW","Long","[LENGTH_CHECK] + [WIDTH_CHECK]")
+'	F.Data.Datatable.AddExpressionColumn("dtParts","LW_CHECK","Boolean","IIF([LW] = 2,True,False)")
+	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Match_Material.End
+
+Program.Sub.Format_Parts.Start
+	V.Local.sProp.Declare
+	v.Local.sValue.Declare	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	v.Local.sValue2.Declare
+	v.Local.sValue3.Declare
+	
+	gui.Form.gsParts.SuspendLayout()
+	gui.Form.gsParts.Setgridviewproperty("gvParts","multiselect",true)	
+	gui.Form.gsParts.SetGridViewProperty("gvParts","AllowSort",True)
+	gui.Form.gsParts.SetGridViewProperty("gvParts","AllowFilter",True)
+	gui.Form.gsParts.SetGridViewProperty("gvParts","OptionsDetailShowDetailTabs",False)
+	gui.Form.gsParts.SetGridViewProperty("gvParts","OptionsViewShowGroupPanel",True)
+	gui.Form.gsParts.SetGridViewProperty("gvParts","EnableAppearanceOddRow",True)
+	gui.Form.gsParts.SetGridviewProperty("gvParts",v.Enum.GridViewPropertyNames!ShowAutoFilterRow,True)
+	gui.Form.gsParts.SetGridviewProperty("gvParts","OptionsViewColumnAutoWidth",False)
+	gui.Form.gsParts.SetGridviewProperty("gvParts","AllowColumnResizing",True)	
+	gui.Form.gsParts.SetGridviewProperty("gvParts","ColumnPanelRowHeight","50")
+	gui.Form.gsParts.SetGridviewProperty("gvParts",v.Enum.GridViewPropertyNames!SuppressNothingDates,True)
+'	gui.Form.gsParts.Setgridviewproperty("gvParts","multiselect",true)
+'	gui.Form.gsParts.Setgridviewproperty("gvParts","multiselectmode",2)
+'	gui.Form.gsParts.Setgridviewproperty("gvParts","CheckBoxSelectorField","SELECT")
+	
+	f.Intrinsic.Control.CallSub(Bulk_Format_PartToCount,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_PartToCount,"sProp","HeaderFontBold","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_PartToCount,"sProp","HeaderWordWrap","sValue","wrap")
+	f.Intrinsic.Control.CallSub(Bulk_Format_PartToCount,"sProp","HeaderVAlignment","sValue","Top")	
+	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17","Visible",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART","Visible",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MatKey","Visible",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","D_THICKNESS","Visible",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PARTSPLIT","Visible",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP_BACKUP","Visible",False)
+	
+	
+	v.Local.sProp.Set("VisibleIndex")
+	v.Local.iCnt.Set(-1)
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Local.sProp,v.Local.iCnt.++)
+	'gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART",v.Local.sProp,v.Local.iCnt.++)
+	'gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,v.Local.iCnt.++)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data1",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data3",v.Local.sProp,v.Local.iCnt.++)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data5",v.Local.sProp,v.Local.iCnt.++)
+	
+	v.Local.sProp.Set("Caption")
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Local.sProp,"Select")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Local.sProp,"Sigmanest Part Name")
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Local.sProp,"Qty Ordered")
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Local.sProp,"Qty Completed")
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,"Due Date")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Local.sProp,"Material")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Local.sProp,"Thickness (mm)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Local.sProp,"Cutting Time (s)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Local.sProp,"Net Area (mm^2)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Local.sProp,"Rect Area (mm^2)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Local.sProp,"Part Length (mm)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Local.sProp,"Part Width (mm)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Local.sProp,"Net Weight (kg)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Local.sProp,"Rect Weight (kg)")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Local.sProp,"GSS Part")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Local.sProp,"Product Line")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Local.sProp,"Source Code")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Local.sProp,"Unit of Measure")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Local.sProp,"Cutting Time (Hr)")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Local.sProp,"Rect Area (m^2)")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Local.sProp,"Net Area (m^2)")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART",v.Local.sProp,"New Part")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Local.sProp,"Description Char(30)")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Local.sProp,"Issue Material")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Local.sProp,"Material Description")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Local.sProp,"Material Width")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Local.sProp,"Material Length")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Local.sProp,"Material Cost")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Local.sProp,"Material OP Code")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data3",v.Local.sProp,"Customer PO (Data3)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data5",v.Local.sProp,"SMC WO & Client (Data5)")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data1",v.Local.sProp,"Sales Order (Data1)")
+	
+	v.Local.sProp.Set("Width")
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Local.sProp,"40")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Local.sProp,"140")
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Local.sProp,"90")
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Local.sProp,"90")
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Local.sProp,"100")
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Local.sProp,"130")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Local.sProp,"100")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART",v.Local.sProp,"40")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Local.sProp,"130")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Local.sProp,"150")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Local.sProp,"100")		
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Local.sProp,"100")		
+	
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("Near")
+	v.Local.sValue2.Set("Center")
+	v.Local.sValue3.Set("Far")
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Local.sProp,v.Local.sValue)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Local.sProp,v.Local.sValue3)
+	
+	v.Local.sProp.Set("CellHAlignment")
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,v.Local.sValue2)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Local.sProp,v.Local.sValue)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Local.sProp,v.Local.sValue3)	
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NEW_PART",v.Local.sProp,v.Local.sValue2)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Local.sProp,v.Local.sValue3)
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Local.sProp,v.Local.sValue3)
+	
+	gui.Form.gsParts.SetColumnProperty("gvParts","Select","AllowEdit",True)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Select","ReadOnly",False)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP","AllowEdit",True)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP","ReadOnly",False)
+'	
+'	gui.Form.gsParts.SetColumnProperty("gvParts","Note","AllowEdit",True)
+'	gui.Form.gsParts.SetColumnProperty("gvParts","Note","ReadOnly",False)	
+	v.Local.sProp.Set("DisplayCustomDatetime")
+	v.Local.sValue.Set("d")	
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Local.sProp,v.Local.sValue)
+	
+	
+'	v.Local.sProp.Set("CellBackColor")
+'	v.Local.sValue.Set("Beige")
+'	gui.Form.gsParts.SetColumnProperty("gvParts","Note",v.Local.sProp,v.Local.sValue)	
+	
+
+	
+	gui.Form.gsParts.ResumeLayout()
+
+Program.Sub.Format_Parts.End
+
+Program.Sub.Bulk_Format_PartToCount.Start
+	gui.Form.gsParts.SetColumnProperty("gvParts","SELECT",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartName",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyOrdered",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","QtyCompleted",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DueDate",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Material",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Thickness",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cuttingtime",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartLength",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PartWidth",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Netweight",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectWeight",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Part_17",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","PL",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","SOURCE_CODE",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","UM",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Cutting_Time_HR",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","RectArea_M",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","NetArea_M",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","New_part",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","DESCRIPTION_30",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_TEMP",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","ISSUED_MATERIAL_DESC",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_WIDTH",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_LENGTH",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","MAT_COST",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","OP_CODE",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data3",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data5",v.Args.sProp,v.Args.sValue)
+	gui.Form.gsParts.SetColumnProperty("gvParts","Data1",v.Args.sProp,v.Args.sValue)
+	
+Program.Sub.Bulk_Format_PartToCount.End
+
+Program.Sub.gsParts_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare
+V.Local.sRet.Declare
+V.Local.sBackup.Declare
+v.Local.sMaterial.Declare
+V.Local.sDesc.Declare
+V.Local.sMatType.Declare
+V.Local.sOpCode.Declare
+V.Local.sMatLength.Declare
+V.Local.sMatWidth.Declare
+V.Local.sMatThickness.Declare
+V.Local.fAmtAltCost.Declare
+
+
+F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+	F.Intrinsic.Control.Case("ISSUED_MATERIAL_TEMP")
+		v.Local.sMaterial.Set(V.Args.Value)
+		gui.Form.gsParts.GetCellValueByColumnName("gvParts","ISSUED_MATERIAL_TEMP_BACKUP",V.Args.rowindex,V.Local.sBackup)
+		'Check inv master to see if we actually have a part. 
+		F.Intrinsic.String.Build("Select RTRIM(PART) as PART, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(TEXT_INFO2) as TEXT_INFO2, RTRIM(TEXT_INFO1) as TEXT_INFO1, LENGTH, WIDTH, THICKNESS, AMT_ALT_COST from V_INVENTORY_ALL where UM_INVENTORY = 'M2' and TEXT_INFO2 <> '' and PART = '{0}' Order by LENGTH Desc, WIDTH Desc",V.Local.sMaterial.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.UI.Msgbox("Material not found, reverting changes.")
+			F.Data.Datatable.SetValue("dtParts",V.Args.RowIndex,"ISSUED_MATERIAL_TEMP",V.Local.sBackup)
+		F.Intrinsic.Control.Else
+			'We found a part to update, lets split and fill
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			V.Local.sDesc.Set(V.Local.sRet(1))
+			V.Local.sMatType.Set(V.Local.sRet(2))
+			V.Local.sOpCode.Set(V.Local.sRet(3))
+			V.Local.sMatLength.Set(V.Local.sRet(4))
+			V.Local.sMatWidth.Set(V.Local.sRet(5))
+			V.Local.sMatThickness.Set(V.Local.sRet(6))
+			V.Local.fAmtAltCost.Set(V.Local.sRet(7))
+			F.Data.Datatable.SetValue("dtParts",V.Args.RowIndex,"ISSUED_MATERIAL_DESC",V.Local.sDesc,"OP_CODE",V.Local.sOpCode,"MAT_LENGTH",V.Local.sMatLength,"MAT_WIDTH",V.Local.sMatWidth,"MAT_COST",V.Local.fAmtAltCost)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsParts_CellValueChanged.End
+
+#End Region 'Tab Parts
+
+#Region "Create Parts, Routers, BOM, SO, WO"
+Program.Sub.Create_Parts.Start
+f.Intrinsic.Control.Try
+	GUI.Form..Enabled(False)
+	V.Local.iCnt.Declare
+	v.Local.iCntPlusOne.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+	'Document Control Variables
+	v.Local.iRefID.Declare
+	v.Local.sFileName.Declare
+	v.Local.sFilePath.Declare
+	v.Local.iPos.Declare
+	v.Local.sFileType.Declare
+	v.Local.sDocDescription.Declare
+	v.Local.sDocIDGroup.Declare
+	v.Local.stemp.Declare
+	v.Local.sBomPart.Declare
+	V.Local.sSOText.Declare
+	v.Local.sSOFixPriceValBox.Declare
+	v.Local.sUser3.Declare
+	v.Local.sUser4.Declare
+	V.Local.fSetupQA.Declare
+	V.Local.fSetupPPRS.Declare
+	V.Local.fSetupDener.Declare
+	V.Local.fSetupArch.Declare
+	V.Local.fSetupTap.Declare
+	V.Local.fSetupPVC.Declare
+	V.Local.sRTRText.Declare
+	V.Local.sDesc.Declare
+	V.Local.bSOWO.Declare
+	V.Local.sWONumber.Declare
+	V.Local.sPartData5.Declare
+	v.Local.iRet.Declare
+	V.Local.sShipVia.Declare
+	V.Local.sShipName.Declare
+	V.Local.sShipAd1.Declare
+	V.Local.sShipAd2.Declare
+	V.Local.sShipAd3.Declare
+	V.Local.sShipCity.Declare
+	V.Local.sShipCountry.Declare
+	V.Local.sShipZip.Declare
+	V.Local.sShipAttn.Declare
+	V.Local.sPhone.Declare
+
+	v.Local.sSOFixPriceValBox.set(v.Screen.Form!chkFixedPrice.value)
+	f.Intrinsic.Control.If(v.Local.sSOFixPriceValBox,=,"1")
+		v.Local.sUser3.Set("Y")
+	F.Intrinsic.Control.EndIf
+	
+	'Mat Markup
+	v.Local.sUser4.set(v.Screen.Form!txtMatMarkup.Text)
+	F.Intrinsic.String.RTrim(V.Local.sUser4,V.Local.sUser4)
+		
+	f.Intrinsic.String.Concat(v.Screen.Form!txtSalesOrderNumber.Text,"KIT",v.Local.sBomPart)
+
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Creating Parts, Routers, BOM, and Sales Order....","GAB 6875 Sigmanest")
+	f.Intrinsic.Control.If(v.DataTable.dtParts.Exists)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("No Data, please select rows from the Parts Tab")
+		F.Intrinsic.UI.CloseWaitDialog
+		GUI.Form..Enabled(TRUE)
+		F.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtPartsAndRouters.Exists)
+		f.Data.DataTable.Close("dtPartsAndRouters")
+	f.Intrinsic.Control.EndIf
+	
+	'Find the rows that are selected and put them into the dtParts table
+	F.Data.DataView.Create("dtParts","dvParts","22","[Select] = True","")
+	F.Data.DataView.ToDataTable("dtParts","dvParts","dtPartsAndRouters",True)
+	F.Data.DataView.Close("dtParts","dvParts")
+	f.Data.Datatable.AddExpressionColumn("dtPartsAndRouters","TotalRectArea","Float","RectArea_M*QtyOrdered")
+	f.Data.Datatable.AddExpressionColumn("dtPartsAndRouters","TotalCutTime","Float","Cutting_time_HR*QtyOrdered")
+
+	
+	F.Intrinsic.Control.If(v.DataTable.dtPartsAndRouters.RowCount,=,0)
+		'No data or no rows selected
+		F.Intrinsic.UI.Msgbox("No Data, please select rows from the Parts Tab")
+		F.Intrinsic.UI.CloseWaitDialog
+		GUI.Form..Enabled(TRUE)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sDesc.Set(v.Screen.Form!txtDescriptor.Text)
+	F.Intrinsic.String.RTrim(V.Local.sDesc,V.Local.sDesc)
+	F.Intrinsic.Control.If(V.Local.sDesc,=,"")
+		'No data in description, which is needed for bompart desc
+		F.Intrinsic.UI.Msgbox("Please enter a description above and try again")
+		F.Intrinsic.UI.CloseWaitDialog
+		GUI.Form..Enabled(TRUE)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+		
+	
+	
+	'Call Create router sub
+	f.Intrinsic.Control.CallSub(Create_Routers)
+	
+	F.Global.Inventory.AddPartToBatch(v.Local.sBomPart,"EA",v.Local.sDesc.PSQLFriendly,"","MF","F","","",0.00,"NOMAINT ")
+	F.Global.Inventory.PostPartBatch
+	
+
+	V.Local.bSOWO.Set(V.Screen.Form!chkSOWOCreate.CheckedAsBoolean)
+	F.Intrinsic.Control.If(V.Local.bSOWO)
+		'Create Sales Order for the customer
+		v.Local.dDueDate.Declare
+		v.Local.sDueDate.Declare
+		v.Local.sSONumber.Declare
+		V.Local.sSOFixedPrice.Declare
+		F.Intrinsic.String.Format(V.Screen.Form!txtSalesOrderFixedPrice.Text,"0000000000.000000",V.Local.sSOFixedPrice)
+		f.Intrinsic.String.Replace(v.Local.sSOFixedPrice,".","",v.Local.sSOFixedPrice)
+			
+		f.Intrinsic.String.LPad(v.Screen.Form!txtSalesOrderNumber.Text,"0",7,v.Local.sSONumber)
+		f.Intrinsic.Date.DateAddWorkdays(v.Ambient.Date,6,v.Local.dDueDate)
+		f.Intrinsic.String.Format(v.Local.dDueDate,"YYYYMMDD",v.Local.sDueDate)
+		f.Data.Datatable.AddRow("6004Header","Type","O","CustNum",v.Screen.Form!txtCustomer.Text,"OrderNum",v.Local.sSONumber,"ShipToID",v.Screen.Form!txtShipToID.Text,"PO",v.Screen.Form!txtCustomerPO.Text)
+		f.Data.Datatable.AddRow("6004Lines","OrderNum",v.Local.sSONumber,"QtyOrdered","10000","UM","EA","Part",v.Local.sBOMPart,"PartDescription",V.Local.sDesc.PSQLFriendly,"PL","MF","PromiseDate",v.Local.sDueDate,"QuotedPrice",V.Local.sSOFixedPrice,"User3",v.Local.sUser3,"User4",v.Local.sUser4)
+		f.Intrinsic.Control.CallSub(6004Sync)
+		
+		'Update SO lines extra text
+		V.Local.sSOText.Set(V.Screen.Form!txtExtraNotes.Text)
+		f.Intrinsic.String.Build("Select 1 From ORDER_LN_TEXT where ORDER_NUM = '{0}' and ORDER_LINE = '0010'",V.Local.sSONumber,V.Local.sSQL)
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("Insert into ORDER_LN_TEXT (ORDER_NUM,ORDER_LINE,ORDER_TYPE,TEXT) VALUES('{0}','0010','9999','{1}')",V.Local.sSONumber,V.Local.sSOText.PSQLFriendly,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("Update ORDER_LN_TEXT Set TEXT = '{0}', ORDER_TYPE = '9999' where ORDER_NUM = '{1}' and ORDER_LINE = '0010'",V.Local.sSOText.PSQLFriendly,V.Local.sSONumber,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		
+		'Update Sales person on SO, hardcoded to HAYDEN, Also update ship via and shipt to information
+		V.Local.sShipVia.Set(V.Screen.Form!txtShipVia.Text)
+		F.Intrinsic.String.RTrim(V.Local.sShipVia,V.Local.sShipVia)
+		f.Intrinsic.String.Build("Update ORDER_HEADER Set SALESPERSON = 'HWH', SHIP_VIA = '{1}' where RECORD_NO = '  A' and ORDER_NO = '{0}'",V.Local.sSONumber,V.Local.sShipVia.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		
+		V.Local.sShipName.Set(V.screen.Form!txtShipName.Text)
+		V.Local.sShipAd1.Set(V.screen.Form!txtAddress1.Text)
+		V.Local.sShipAd2.Set(V.screen.Form!txtAddress2.Text)
+		V.Local.sShipAd3.Set(V.screen.Form!txtAddress3.Text)
+		'V.Local.sShipCity.Set(V.screen.Form!txtShipCity.Text)
+		'V.Local.sShipCountry.Set(V.screen.Form!txtShipCountry.Text)
+		V.Local.sShipZip.Set(V.screen.Form!txtShipZip.Text)
+		V.Local.sShipAttn.Set(V.screen.Form!txtShipAttn.Text)
+		V.Local.sPhone.Set(V.screen.Form!txtPhone.Text)
+		F.Intrinsic.String.RTrim(V.Local.sShipName,V.Local.sShipName)
+		F.Intrinsic.String.RTrim(V.Local.sShipAd1,V.Local.sShipAd1)
+		F.Intrinsic.String.RTrim(V.Local.sShipAd2,V.Local.sShipAd2)
+		F.Intrinsic.String.RTrim(V.Local.sShipAd3,V.Local.sShipAd3)
+		'F.Intrinsic.String.RTrim(V.Local.sShipCity,V.Local.sShipCity)
+		'F.Intrinsic.String.RTrim(V.Local.sShipCountry,V.Local.sShipCountry)
+		F.Intrinsic.String.RTrim(V.Local.sShipZip,V.Local.sShipZip)
+		F.Intrinsic.String.RTrim(V.Local.sShipAttn,V.Local.sShipAttn)
+		F.Intrinsic.String.RTrim(V.Local.sPhone,V.Local.sPhone)
+		
+		f.Intrinsic.String.Build("Update V_ORDER_SHIP_TO Set SHIP_VIA_SHIP = '{1}', NAME_CUSTOMER_SHIP = '{2}', ADDRESS_1_SHIP = '{3}', ADDRESS_2_SHIP = '{4}', ADDRESS_3_SHIP = '{5}', CODE_ZIP_SHIP = '{6}', ATTENTION_SHIP = '{7}' where RECORD_NO = '  C' and ORDER_NO = '{0}'",V.Local.sSONumber,V.Local.sShipVia.PSQLFriendly,V.Local.sShipName.PSQLFriendly,V.Local.sShipAd1.PSQLFriendly,V.Local.sShipAd2.PSQLFriendly,V.Local.sShipAd3.PSQLFriendly,V.Local.sShipZip.PSQLFriendly,V.Local.sShipAttn.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Update V_ORDER_BILL_TO set CONTACT_PHONE = '{1}' where RECORD_NO = '  B' and ORDER_NO = '{0}'",V.Local.sSONumber,V.Local.sPhone.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+				
+	F.Intrinsic.Control.EndIf
+	'No longer using this since we are only creating 1 part for a kit
+	'Loop again... Add in Width (mm), Length (mm) [INV_MST2], THICHNESS (mm) [INV_MST3], Inv Extra text, weight (kg), and document control
+	'F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtPartsAndRouters.RowCount--,1)
+'		F.Intrinsic.String.Build("Update INVENTORY_MST3 set THICKNESS = {0} Where Part in (Select Part from INVENTORY_MSTR where DESCRIPTION = '{1}')",V.DataTable.dtPartsAndRouters(V.Local.iCnt).Thickness!fieldvalfloat,V.DataTable.dtPartsAndRouters(V.Local.iCnt).Description_30!fieldvaltrim,V.Local.sSQL)
+'		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'		
+'		F.Intrinsic.String.Build("Update INVENTORY_MST2 set Length = {0}, Width = {1}, LBS = {2} Where Part in (Select Part from INVENTORY_MSTR where DESCRIPTION = '{4}')",V.DataTable.dtPartsAndRouters(V.Local.iCnt).PartLength!fieldvalfloat,V.DataTable.dtPartsAndRouters(V.Local.iCnt).PartWidth!fieldvalfloat,V.DataTable.dtPartsAndRouters(V.Local.iCnt).Netweight!fieldvalfloat,V.DataTable.dtPartsAndRouters(V.Local.iCnt).Description_30!fieldvaltrim,V.Local.sSQL)
+'		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'		
+'		F.Intrinsic.String.Build("INSERT into INV_EXTRA_TEXT (PART,TEXT) Values ('{0}','{1}')",V.DataTable.dtPartsAndRouters(V.Local.iCnt).Part_17!fieldvalTrim,V.DataTable.dtPartsAndRouters(V.Local.iCnt).PartName!fieldvaltrim,V.Local.sSQL)
+'		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'		
+'		'Get Link ID, create Link ID if it does not exists
+'		f.Global.DocumentControl.GetLinkID(V.DataTable.dtPartsAndRouters(V.Local.iCnt).Part_17!fieldvalTrim,30,v.Local.iRefID)
+'		f.Intrinsic.Control.If(v.Local.irefid,=,-1)
+'			F.Global.DocumentControl.CreateReference(V.DataTable.dtPartsAndRouters(V.Local.iCnt).Part_17!fieldvalTrim,"00030",V.Local.iRefID)
+'		f.Intrinsic.Control.EndIf	
+'		
+'		'Get File Name, path, and type
+'		F.Intrinsic.String.Split(V.DataTable.dtPartsAndRouters(V.Local.iCnt).PartDrawing!fieldvalTrim,"$#$",V.Local.sTemp)
+'		f.Intrinsic.File.GetFileNameFromFQN(v.Local.stemp(0),v.Local.sFileName)
+'		f.Intrinsic.File.GetPathFromFQN(v.Local.stemp(0),v.Local.sFilePath)
+'		f.Intrinsic.String.InstrRev(v.Local.sFileName,".",v.Local.iPos)
+'		f.Intrinsic.String.Mid(v.Local.sFileName,v.Local.iPos.++,v.Local.sFileType)
+'		F.Intrinsic.String.Split(V.Local.sFileType,"~",v.Local.sFileType)
+'		v.Local.sDocIDGroup.Set("-1")
+'		
+'		'Insert into document control		
+'		v.Local.ssql.Set("INSERT INTO ATG_DOC_ASSOC VALUES ('','{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','','','','',0)")
+'		F.Intrinsic.String.Build(V.Local.SSQL,v.Local.irefid,v.Local.sfiletype(0),v.Local.sFilePath.PSQLFriendly,v.Local.sFileName.PSQLFriendly,V.Local.sDocDescription,v.Ambient.Now.PervasiveDate,v.Caller.User,V.Local.sDocIDGroup,v.Local.ssql)
+'		f.ODBC.Connection!conx.execute(v.Local.ssql)
+'		
+'		F.Data.DataTable.SetValue("dtPartsAndRouters",V.Local.iCnt,"NEW_PART",False)
+	'F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	
+	F.Intrinsic.Control.If(V.Local.bSOWO)
+		f.Data.Datatable.AddRow("200800","Type","O","OrdNum",v.Local.sSONumber)
+		f.Intrinsic.Control.CallSub(200800Sync)
+		
+		'Find the WO number that was just created and update the Sortcode on it so that we can grab it on the WOL file in another Export script back to sigmanest??
+		F.Intrinsic.String.Build("Select RTRIM(Job) as job from ORDER_TO_WO where ORDER_NO = '{0}'",V.Local.sSONumber,V.Local.sSQL)
+		F.ODBC.Connection!conX.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.executeandreturnEOF.not)
+			F.Intrinsic.String.Split(V.Local.sRet,"#$#",V.Local.sRet)
+			V.Local.sWONumber.Set(V.Local.sRet(0))
+			
+			'update code sort field on the WO that was just created.
+			V.Local.sPartData5.Set(V.DataTable.dtPartsAndRouters(0).Data5!fieldvaltrim)
+			F.Intrinsic.String.Build("Update JOB_HEADER set CODE_SORT = '{0}' Where JOB = '{1}'",V.Local.sPartData5.PSQLFriendly,V.Local.sWONumber,V.Local.sSQL)
+			F.ODBC.Connection!conX.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf
+	
+	gui.Form.txtSalesOrderNumber.Text("")
+	gui.Form.txtCustomer.Text("")
+	gui.Form.txtDescriptor.Text("")
+	gui.Form.txtSetupDebur.Text(0)
+	gui.Form.txtSetupDener.Text(0)
+	gui.Form.txtSetupPressProg.Text(0)
+	gui.Form.txtSetupTap.Text(0)
+	gui.Form.txtSetupPVC.Text(0)
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	F.Intrinsic.UI.Msgbox("Part and Router upload completed")
+	GUI.Form..Enabled(TRUE)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Create_Parts.End
+
+
+Program.Sub.prepBOM.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	V.Local.sLine.Declare
+	V.Local.sParent.Declare
+	V.Local.sPart.Declare
+	V.Local.sSeq.Declare
+	V.Local.sDescription.Declare
+	V.Local.sCount.Declare
+	V.Local.sUM.Declare
+	V.Local.sCategory.Declare
+	V.Local.sSource.Declare
+	V.Local.sMisc.Declare
+	V.Local.iFor.Declare
+	V.Local.i7.Declare
+	V.Local.sRev.Declare
+	V.Local.schild.Declare
+	V.Local.sqty.Declare
+	V.Local.spno.Declare
+	V.Local.suom.Declare
+	V.Local.sDesc.Declare
+	V.Local.spad.Declare
+	V.Local.spad1.Declare
+	V.Local.spad2.Declare
+	V.Local.spad3.Declare
+	V.Local.sRMLine.Declare
+	V.Local.sRMParent.Declare
+	v.Local.ssql.Declare
+	V.Local.sVendcode.Declare
+	v.Local.sPL.Declare
+	V.Local.sTempCategory.Declare
+	
+	F.Intrinsic.String.RPad(v.Args.Part," ",20,V.Local.sPart)
+	F.Intrinsic.String.Left(V.Local.sPart,20,V.Local.sPart)
+	
+	'F.Intrinsic.String.RPad(v.Args.Rev," ",3,V.Local.sRev)
+	'F.Intrinsic.String.Left(V.Local.sRev,3,V.Local.sRev)
+	
+	'Parent
+	F.Intrinsic.String.RPad(V.Args.Parent," ",20,V.Local.sParent)
+	F.Intrinsic.String.Concat(v.global.sfileupload,v.Local.sParent,v.global.sfileupload)
+	
+	'Sequences
+	f.Intrinsic.String.LPad(v.args.Seq,"0",4,v.Local.sLine)
+	F.Intrinsic.String.Concat(v.global.sfileupload,v.Local.sLine,v.global.sfileupload)
+	
+	'Quantity
+	Function.Intrinsic.String.Format(v.Args.QTY,"####.0000", variable.local.sqty)
+	F.Intrinsic.String.LPad(variable.local.sqty,"0",16,V.Local.sqty)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.sqty,v.global.sfileupload)
+	
+	'Part & Rev put together
+	F.Intrinsic.String.GSSPartString(V.Local.sPart,V.Local.sRev,V.Local.sPart)
+	f.Intrinsic.String.RPad(v.Local.sPart," ",20,v.Local.sPart)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.sPart,v.global.sfileupload)
+	
+	'UM
+	F.Intrinsic.String.RPad(v.Args.UM," ",2,V.Local.sUM)
+	F.Intrinsic.String.Left(V.Local.sUM,2,V.Local.sUM)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.sUM,v.global.sfileupload)
+	
+	'Descriptions
+	F.Intrinsic.String.RPad(V.Args.DESC," ",30,V.Local.sdesc)
+	'F.Intrinsic.String.RPad(" "," ",30,V.Local.sdesc)
+	F.Intrinsic.String.Left(V.Local.sdesc,30,V.Local.sdesc)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.sdesc,v.global.sfileupload)
+	
+	'Free Pad
+	F.Intrinsic.String.RPad(V.Local.spad1," ",113,V.Local.spad1)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.spad1,v.global.sfileupload)
+	
+	''Vendor Code
+	'F.Intrinsic.String.RPad(v.Args.Vendor," ",6,V.Local.sVendcode)
+	'F.Intrinsic.String.Left(V.Local.sVendcode,6,V.Local.sVendcode)
+	'F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.svendcode,v.global.sfileupload)
+	
+	'Free Pad
+	'F.Intrinsic.String.RPad(V.Local.spad2," ",48,V.Local.spad2)
+	'F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.spad2,v.global.sfileupload)
+	
+	'Category
+	F.Intrinsic.Control.If(V.Args.Category.Trim,=,"Phantom")
+		F.Intrinsic.String.Concat(v.global.sfileupload,"P",v.global.sfileupload)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(v.global.sfileupload," ",v.global.sfileupload)
+	F.Intrinsic.Control.EndIf
+	
+	'Source
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.args.Source,v.global.sfileupload)
+	
+	'Free Pad
+	F.Intrinsic.String.RPad(V.Local.spad3," ",90,V.Local.spad3)
+	F.Intrinsic.String.Concat(v.global.sfileupload,V.Local.spad3,v.global.sfileupload)
+	
+	f.Intrinsic.String.Concat(v.Global.sfileupload,v.Ambient.NewLine,v.Global.sfileupload)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.prepBOM.End
+Program.Sub.Create_Routers.Start
+f.Intrinsic.Control.Try
+	
+	V.Local.iCnt.Declare
+	v.Local.sPartNumber.Declare
+	v.Local.sDescr.Declare
+	v.Local.sDesc.Declare
+	V.Local.sWC.Declare
+	v.Local.sWCBase.Declare
+	v.Local.sMaterial.Declare
+	v.Local.sMaterialDesc.Declare
+	V.Local.fLaserFloatTime.Declare
+	v.Local.fRun.Declare
+	V.Local.sPL.Declare
+	v.Local.fWCRatePCUT.Declare
+	v.Local.fWCRateMFG.Declare
+	v.Local.fWCRateLAS1.Declare
+	v.Local.fMaterialCost.Declare
+	v.Local.fLaserCutCost.Declare
+	v.Local.fQty1.Declare
+	V.Local.fSetup.Declare
+	V.Local.sRet.Declare
+	v.Local.sPartStepUM.Declare
+	v.Local.fPartsPerSheetCalc.Declare
+	v.Local.sSeq.Declare
+	v.Local.iLasSeq.Declare
+	v.Local.iMatSeq.Declare
+	V.Local.sCust.Declare
+	V.Local.sCust.Set(V.Screen.Form!txtCustomer.Text)
+	v.Local.sBomPart.Declare
+	v.local.sSql.Declare
+	v.Local.sRTRText.Declare
+	v.Local.sRTRText2.Declare
+	V.Local.fSetupPPRS.Declare
+
+
+	f.Intrinsic.String.Concat(v.Screen.Form!txtSalesOrderNumber.Text,"KIT",v.Local.sBomPart)
+	v.Local.sPartNumber.Set(v.Local.sBomPart)
+	v.Local.sDesc.Set(v.Screen.Form!txtDescriptor.Text)
+	v.Local.sDescr.Set(v.Screen.Form!txtDescriptor.Text)
+	
+	f.Data.DataView.Create("dtPartsAndRouters","dvPartsAndRouters")
+	
+	'Get WC rates for WCs PCUT, MFG, LAS1
+	F.ODBC.Connection!conx.ExecuteAndReturn("select STANDARD_BILL from WORKCENTERS where MACHINE = 'PCUT' or MACHINE = 'MFG' or MACHINE = 'LAS1' order by MACHINE",V.Local.sRet)
+	F.Intrinsic.String.Split(V.Local.sRet,"#$#",V.Local.sRet)
+	v.Local.fWCRateLAS1.Set(V.Local.sRet(0).float)
+	v.Local.fWCRateMFG.Set(V.Local.sRet(1).float)
+	v.Local.fWCRatePCUT.Set(V.Local.sRet(2).float)
+	
+	
+	F.ODBC.Connection!conx.ExecuteAndReturn("select STANDARD_COST from WORKCENTERS where MACHINE = 'LAS1' order by MACHINE",V.Local.fLaserCutCost)
+	
+	'Global Constants
+	V.Local.fLaserFloatTime.Set(2) 'postfloat
+	V.Local.fSetup.Set(0.0833) '5 min set up time
+	v.Local.fQty1.Set(1) 'router header qty
+	V.Local.sPL.Set("MF") ' router header PL
+	
+	'18th January 2023 Update RDF
+	'Comment out line for dividing across all parts, consolidating to one part & router now
+	
+	'Start with the comment, line 1:
+	f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","1","RouterDesc",V.Local.sDesc.PSQLFriendly,"PartStepDesc","SO Line Text:","LineType","C","UM","HR","PL","MF","Qty1",1)
+	V.local.sRTRText.Set(V.Screen.Form!txtExtraNotes.Text)
+	V.local.sRTRText2.Set(V.Screen.Form!txtRTRComments.Text)
+	f.Intrinsic.String.Concat(v.Ambient.NewLine,v.Local.sRTRText,v.Local.sRTRText)
+	F.Intrinsic.String.RTrim(V.Local.sRTRText,V.Local.sRTRText)
+	f.Intrinsic.String.Concat(v.Ambient.NewLine,v.Local.sRTRText2,v.Local.sRTRText2)
+	F.Intrinsic.String.RTrim(V.Local.sRTRText2,V.Local.sRTRText2)
+	f.Intrinsic.String.Build("{0}{1}{1}Instructions:{2}",V.Local.sRTRText,V.Ambient.NewLine,V.Local.sRTRText2,V.Local.sRTRText)
+	f.Intrinsic.String.Build("SELECT * FROM RTR_SEQ_COMMENTS WHERE RTR_NUMBER='{0}' and RTR_SEQ='000001'",v.Local.sBomPart.Trim,v.Local.sSQL)
+	F.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet.Trim,=,"")
+		F.Intrinsic.String.Build("Insert into RTR_SEQ_COMMENTS (RTR_NUMBER,RTR_SEQ,TEXT) VALUES('{0}','000001','{1}')",V.Local.sBomPart.PSQLFriendly,V.Local.sRTRText.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("update RTR_SEQ_COMMENTS set text='{0}' where RTR_NUMBER='{1}' AND RTR_SEQ='000001'",V.Local.sRTRText.PSQLFriendly,V.Local.sBomPart.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+'	'comment, line 2:
+'	f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","2","RouterDesc",V.Local.sDesc.PSQLFriendly,"PartStepDesc","Instructions:","LineType","C","UM","HR","PL","MF","Qty1",1)
+'	V.local.sRTRText.Set(V.Screen.Form!txtRTRComments.Text)
+'	f.Intrinsic.String.Concat(v.Ambient.NewLine,v.Local.sRTRText,v.Local.sRTRText)
+'	F.Intrinsic.String.RTrim(V.Local.sRTRText,V.Local.sRTRText)
+'	f.Intrinsic.String.Build("SELECT * FROM RTR_SEQ_COMMENTS WHERE RTR_NUMBER='{0}' and RTR_SEQ='000002'",v.Local.sBomPart.Trim,v.Local.sSQL)
+'	F.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+'	f.Intrinsic.Control.If(v.Local.sRet.Trim,=,"")
+'		F.Intrinsic.String.Build("Insert into RTR_SEQ_COMMENTS (RTR_NUMBER,RTR_SEQ,TEXT) VALUES('{0}','000002','{1}')",V.Local.sBomPart.PSQLFriendly,V.Local.sRTRText.PSQLFriendly,V.Local.sSQL)
+'		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'	f.Intrinsic.Control.Else
+'		F.Intrinsic.String.Build("update RTR_SEQ_COMMENTS set text='{0}' where RTR_NUMBER='{1}' AND RTR_SEQ='000002'",V.Local.sRTRText.PSQLFriendly,V.Local.sBomPart.PSQLFriendly,V.Local.sSQL)
+'		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'	f.Intrinsic.Control.EndIf
+	
+	'Then Software charge sequence 20
+	f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","20","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","SOFT","PartStepDesc","software","LineType","L","SetupQty",1,"RateUC",2.5,"UM","HR","PL","MF","Qty1",1)
+	
+	'Then Programming sequence 50
+	v.Local.fSetupProg.Declare
+	F.Intrinsic.Control.If(V.Screen.Form!txtSetupProg.Text,<>,"")
+		V.Local.fSetupProg.Set(v.Screen.Form!txtSetupProg.text)	
+		f.Intrinsic.Control.If(v.Local.fSetupProg,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupProg,60,v.Local.fSetupProg)
+			V.Local.sWC.Set("PCUT")
+			v.Local.sWCBase.Set("Programming CUT")
+			f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"CustID",V.Local.sCust.Trim,"RouterNum",v.Local.sPartNumber,"Seq","50","RouterDesc",v.Local.sDesc.PSQLFriendly,"WC",V.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",V.Local.fSetupProg,"RateUC",v.Local.fWCRatePCUT,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1,"OperationCodeVend","FLUSH")
+			'f.Intrinsic.Math.Div(v.Local.fSetupProg,v.DataTable.dtPartsAndRouters.RowCount,v.Local.fSetupProg)
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'Next is material, 100-194
+	v.Local.iMatSeq.Set(100)
+	F.Data.DataView.Create("dtPartsAndRouters","dvPartsAndRoutersMaterial")
+	f.Data.DataView.ToDataTableDistinct("dtPartsAndRouters","dvPartsAndRoutersMaterial","dtPartsAndRoutersMaterial","ISSUED_MATERIAL_TEMP*!*ISSUED_MATERIAL_DESC*!*MAT_COST")
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtPartsAndRoutersMaterial.RowCount--,1)
+		f.Intrinsic.Math.Add(v.Local.iMatSeq,v.Local.iCnt,v.Local.iMatSeq)
+		f.Intrinsic.String.Build("ISSUED_MATERIAL_TEMP='{0}'",v.DataTable.dtPartsAndRoutersMaterial(v.Local.iCnt).ISSUED_MATERIAL_TEMP!fieldvaltrim,v.Local.sSql)
+		
+		f.Data.Datatable.Compute("dtPartsAndRouters","SUM(TotalRectArea)",v.Local.sSql,v.Local.fPartsPerSheetCalc)
+		v.Local.sMaterial.Set(V.DataTable.dtPartsAndRouters(V.Local.iCnt).ISSUED_MATERIAL_TEMP!fieldvaltrim)
+		v.Local.sMaterialDesc.Set(V.DataTable.dtPartsAndRouters(V.Local.iCnt).ISSUED_MATERIAL_DESC!fieldvaltrim)
+		v.Local.fMaterialCost.Set(V.DataTable.dtPartsAndRouters(V.Local.iCnt).MAT_COST!fieldval) 
+		v.Local.sPartStepUM.Set("M2") 
+		f.Data.DataTable.AddRow("6021","SortCode","SHEET", "RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq",v.Local.iMatSeq,"RouterDesc",v.Local.sDesc.PSQLFriendly, "PartStepDesc",v.Local.sMaterialDesc,"LineType","M","PartNum",v.Local.sMaterial,"RunTimeMatlQty",v.Local.fPartsPerSheetCalc,"RateUC",v.Local.fMaterialCost,"UM",v.Local.sPartStepUM,"PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Data.DataTable.Close("dtPartsAndRoutersMaterial")
+	f.Data.DataView.Close("dtPartsAndRouters","dvPartsAndRoutersMaterial")
+	
+	'Then loading, sequence 190
+'	v.Local.fSetupLoad.Declare
+'	f.Intrinsic.Control.If(v.Screen.Form!txtSetupLoad.Text,<>,"")
+'		v.Local.fSetupLoad.Set(v.Screen.Form!txtSetupLoad.Text)
+'		f.Intrinsic.Control.If(v.Local.fSetupLoad,<>,0)
+'			f.Intrinsic.Math.Div(v.Local.fSetupLoad,60,v.Local.fSetupLoad)
+'			V.Local.sWC.Set("MFG")
+'			v.Local.sWCBase.Set("Loading")  
+'			f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq","190","RouterDesc",v.Local.sDescr,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",v.Local.fSetupLoad,"RateUC",v.Local.fWCRateMFG,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+'			'f.Intrinsic.Math.Div(v.Local.fSetupLoad,v.DataTable.dtpartsandrouters.RowCount,v.Local.fSetupLoad)
+'		f.Intrinsic.Control.EndIf
+'	f.Intrinsic.Control.EndIf
+	
+	'Next is Laser from 195-208
+	v.Local.iLasSeq.Set(195)
+	F.Data.DataView.Create("dtPartsAndRouters","dvPartsAndRoutersOpCode")
+	f.Data.DataView.ToDataTableDistinct("dtPartsAndRouters","dvPartsAndRoutersOpCode","dtPartsAndRoutersOpCode","OP_CODE")
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtPartsAndRoutersOpCode.RowCount--,1)
+		'SEQ 200 Labor Cutting (LAS1 work centre)
+		
+		V.Local.sWC.Set("LAS1")
+		F.Intrinsic.Control.If(V.DataTable.dtPartsAndRoutersOpCode(V.Local.iCnt).OP_CODE!fieldvaltrim,=,"WTR")	
+			V.Local.sWC.Set("WTR")
+		F.Intrinsic.Control.EndIf
+		v.Local.sWCBase.Set("Cutting") 
+		f.Intrinsic.Math.Add(v.Local.iLasSeq,v.Local.iCnt,v.Local.iLasSeq)
+		f.Intrinsic.String.Build("OP_CODE='{0}'",v.DataTable.dtPartsAndRoutersOpCode(v.Local.iCnt).OP_Code!fieldvaltrim,v.Local.sSql)
+		'Cutting Time
+		f.Data.Datatable.Compute("dtPartsAndRouters","SUM(TotalCutTime)",v.Local.sSql,v.Local.fRun)
+		f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq",v.Local.iLasSeq,"RouterDesc",v.Local.sDesc.PSQLFriendly,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","RunTimeMatlQty",v.Local.fRun,"RateUC",v.Local.fLaserCutCost,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1,"OperationCodeVend",V.DataTable.dtPartsAndRouters(V.Local.iCnt).OP_CODE!fieldval)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'Next is Operator, 209, UPDATED TO 190 Per Hayden to keep labour above cutting
+	v.Local.fSetupOperator.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupOp.Text,<>,"")
+		v.Local.fSetupOperator.Set(v.Screen.Form!txtSetupOp.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupOperator,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupOperator,60,v.Local.fSetupOperator)
+			'f.Intrinsic.Math.Div(v.Local.fSetupOperator,v.DataTable.dtpartsandrouters.RowCount,v.Local.fSetupOperator)
+			V.Local.sWC.Set("MFG")
+			'PartStepDesc
+			v.Local.sWCBase.Set("Load/Operator/Unload")  
+			f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq","190","RouterDesc",v.Local.sDesc.PSQLFriendly,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",v.Local.fSetupOperator,"RateUC",v.Local.fWCRateMFG,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+'	'Next is unloading 210
+'	v.Local.fSetupUnload.Declare
+'	f.Intrinsic.Control.If(v.Screen.Form!txtSetupUnload.Text,<>,"")
+'		v.Local.fSetupUnload.Set(v.Screen.Form!txtSetupUnload.Text)
+'		f.Intrinsic.Control.If(v.Local.fSetupUnload,<>,0)
+'			f.Intrinsic.Math.Div(v.Local.fSetupUnload,60,v.Local.fSetupUnload)
+'			'f.Intrinsic.Math.Div(v.Local.fSetupUnload,v.DataTable.dtpartsandrouters.RowCount,v.Local.fSetupUnload)
+'			V.Local.sWC.Set("MFG")
+'			v.Local.sWCBase.Set("Unloading")  
+'			f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq","210","RouterDesc",v.Local.sDescr,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",v.Local.fSetupUnload,"RateUC",v.Local.fWCRateMFG,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+'		f.Intrinsic.Control.EndIf
+'	f.Intrinsic.Control.EndIf
+	
+	'Next is PVC 220
+	v.Local.fSetupPVC.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupPVC.Text,<>,"")
+		v.Local.fSetupPVC.Set(v.Screen.Form!txtSetupPVC.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupPVC,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupPVC,60,v.Local.fSetupPVC)
+			'f.Intrinsic.Math.Div(v.Local.fSetupPVC,v.DataTable.dtpartsandrouters.RowCount,v.Local.fSetupPVC)
+			f.Intrinsic.Control.If(v.Local.fSetupPVC,>,0)
+				V.Local.sWC.Set("MFG")
+				v.Local.sWCBase.Set("PVC Coat MF")  
+				f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq","220","RouterDesc",v.Local.sDesc.PSQLFriendly,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",v.Local.fSetupPVC,"RateUC",v.Local.fWCRateMFG,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'Next is QA 330
+	v.Local.fSetupQA.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupQA.Text,<>,"")
+		v.Local.fSetupQA.Set(v.Screen.Form!txtSetupQA.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupQA,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupQA,60,v.Local.fSetupQA)
+			f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","330","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","MFG","PartStepDesc","QA & Delivery","LineType","L","SetupQty",V.Local.fSetupQA,"RateUC",42,"UM","HR","PL","MF","Qty1",1)
+			'f.Intrinsic.Math.Div(v.Local.fSetupQA,v.DataTable.dtpartsandrouters.RowCount,v.Local.fSetupQA)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'Next is Tapping 240
+	v.Local.fSetupTap.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupTap.Text,<>,"")
+		v.Local.fSetupTap.Set(v.Screen.Form!txtSetupTap.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupTap,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupTap,60,v.Local.fSetupTap)
+			f.Intrinsic.Control.If(v.Local.fSetupTap,>,0)
+				V.Local.sWC.Set("MFG")
+				v.Local.sWCBase.Set("CSK Tapping MF")  
+				f.Data.DataTable.AddRow("6021","PostFloat",V.Local.fLaserFloatTime,"RouterNum",v.Local.sPartNumber,"CustID",V.Local.sCust.Trim,"Seq","240","RouterDesc",v.Local.sDesc.PSQLFriendly,"WC",v.Local.sWC,"PartStepDesc",v.Local.sWCBase,"LineType","L","SetupQty",v.Local.fSetupTap,"RateUC",v.Local.fWCRateMFG,"UM","HR","PL",V.Local.sPL,"Qty1",v.Local.fQty1)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'SEQ 250 Labor Arch Deburring MF (MFG work centre)... User input Set up time 
+	v.Local.fSetupArch.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupDebur.Text,<>,"")
+		v.Local.fSetupArch.Set(v.Screen.Form!txtSetupDebur.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupArch,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupArch,60,v.Local.fSetupArch)			
+			V.Local.sWC.Set("MFG")
+			v.Local.sWCBase.Set("Arch Deburring MF")  
+			
+			'PartStepDesc 
+			f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","250","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","MFG","PartStepDesc","Arch Deburring","LineType","L","SetupQty",V.Local.fSetupArch,"RateUC",42,"UM","HR","PL","MF","Qty1",1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+
+	'SEQ 270 Labor Programming PRESS (PPRS work centre)... User input Set up time 
+	v.Local.fSetupProgPress.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupPressProg.Text,<>,"")
+		v.Local.fSetupProgPress.Set(v.Screen.Form!txtSetupPressProg.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupProgPress,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupProgPress,60,v.Local.fSetupProgPress)			
+			V.Local.sWC.Set("PPRS")
+			v.Local.sWCBase.Set("Programming Press")  
+			'PartStepDesc 
+			f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","270","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","PPRS","PartStepDesc","Programming PRESS","LineType","L","SetupQty",V.Local.fSetupProgPress,"RateUC",42,"UM","HR","PL","MF","Qty1",1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+		
+
+	'Seq 300, Dener Press
+	v.Local.fSetupDener.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtSetupDener.Text,<>,"")
+		v.Local.fSetupDener.Set(v.Screen.Form!txtSetupDener.Text)
+		f.Intrinsic.Control.If(v.Local.fSetupDener,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fSetupDener,60,v.Local.fSetupDener)
+			'PartStepDesc 
+			f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","300","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","DENR","PartStepDesc","Dener","LineType","L","SetupQty",V.Local.fSetupDener,"RateUC",42,"UM","HR","PL","MF","Qty1",1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'Seq 600, Town Labor
+	v.Local.fTownLabor.Declare
+	f.Intrinsic.Control.If(v.Screen.Form!txtTownLabor.Text,<>,"")
+		v.Local.fTownLabor.Set(v.Screen.Form!txtTownLabor.Text)
+		f.Intrinsic.Control.If(v.Local.fTownLabor,<>,0)
+			f.Intrinsic.Math.Div(v.Local.fTownLabor,60,v.Local.fTownLabor)
+			'PartStepDesc 
+			f.Data.DataTable.AddRow("6021","CustID",v.Screen.Form!txtCustomer.Text,"RouterNum",v.Local.sBomPart,"Seq","600","RouterDesc",V.Local.sDesc.PSQLFriendly,"WC","TOWN","PartStepDesc","Town Labour","LineType","L","SetupQty",V.Local.fTownLabor,"RateUC",42,"UM","HR","PL","MF","Qty1",1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	
+	F.Intrinsic.Control.If(V.DataTable.6021.RowCount,<>,0)
+		F.Intrinsic.Control.CallSub(6021Sync)
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Create_Routers.End
+#End Region 'Create Parts and Routers
+
+#Region "Maintenance Menu"
+
+Program.Sub.LoaddtMarkup.Start
+f.Intrinsic.Control.Try
+	V.Local.sBegDate.Declare
+	V.Local.sEndDate.Declare
+	V.Local.dBegDate.Declare
+	V.Local.dEndDate.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	V.local.iCnt.Declare
+	v.Local.sSerialize.Declare
+	v.Local.sProgrammedBy.Declare
+	
+	f.Intrinsic.Control.If(v.DataTable.dtMarkup.Exists)
+		f.Data.DataTable.Close("dtMarkup")
+		gui.FormMaint.gsMarkup.ClearRows("gvMarkup")		
+	f.Intrinsic.Control.EndIf
+	Gui.FormMaint.gsMarkup.Visible(False)
+	F.Intrinsic.String.Build("Select  RTRIM(A.CUSTOMER) as CUSTOMER, A.MARKUP as MARKUP, RTRIM(B.NAME_CUSTOMER) as NAME_CUSTOMER FROM GAB_6875_Markup_by_Cust A Left Join V_CUSTOMER_MASTER B on A.CUSTOMER = B.CUSTOMER",v.Local.sProgrammedBy,V.Local.sSQL)
+	F.Data.Datatable.CreateFromSQL("dtMarkup","conx",V.Local.sSQL,True)
+	F.Data.Datatable.AddColumn("dtMarkup","Delete","Boolean",False)
+	
+	gui.FormMaint.gsMarkup.AddGridviewFromDatatable("gvMarkup","dtMarkup")
+	f.Intrinsic.Control.CallSub(Format_Markup)
+	gui.FormMaint.gsMarkup.MainView("gvMarkup")
+	Gui.FormMaint.gsMarkup.Visible(True)
+	'gui.FormMaint.tab1.SetTab(0)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoaddtMarkup.End
+
+Program.Sub.Format_Markup.Start
+	V.Local.sProp.Declare
+	v.Local.sValue.Declare	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	v.Local.sValue2.Declare
+	v.Local.sValue3.Declare
+	V.Local.sSQL.Declare
+	
+	gui.FormMaint.gsMarkup.SuspendLayout()
+	
+	gui.FormMaint.gsMarkup.SetGridViewProperty("gvMarkup","AllowSort",False)
+	gui.FormMaint.gsMarkup.SetGridViewProperty("gvMarkup","AllowFilter",True)
+	gui.FormMaint.gsMarkup.SetGridViewProperty("gvMarkup","OptionsDetailShowDetailTabs",False)
+	gui.FormMaint.gsMarkup.SetGridViewProperty("gvMarkup","OptionsViewShowGroupPanel",False)
+	gui.FormMaint.gsMarkup.SetGridViewProperty("gvMarkup","EnableAppearanceOddRow",True)
+	gui.FormMaint.gsMarkup.SetGridviewProperty("gvMarkup",v.Enum.GridViewPropertyNames!ShowAutoFilterRow,True)
+	gui.FormMaint.gsMarkup.SetGridviewProperty("gvMarkup","OptionsViewColumnAutoWidth",True)
+	gui.FormMaint.gsMarkup.SetGridviewProperty("gvMarkup","AllowColumnResizing",True)	
+	gui.FormMaint.gsMarkup.SetGridviewProperty("gvMarkup", "ShowConditionalFormattingItem", False)
+	
+	f.Intrinsic.Control.CallSub(Bulk_Format_Markup,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Markup,"sProp","HeaderFontBold","sValue","True")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Markup,"sProp","HeaderWordWrap","sValue","wrap")
+	f.Intrinsic.Control.CallSub(Bulk_Format_Markup,"sProp","HeaderVAlignment","sValue","Top")	
+	
+	
+	v.Local.sProp.Set("VisibleIndex")
+	v.Local.iCnt.Set(-1)	
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,v.Local.iCnt.++)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,v.Local.iCnt.++)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,v.Local.iCnt.++)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,v.Local.iCnt.++)
+	
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("Near")
+	v.Local.sValue2.Set("Center")
+	v.Local.sValue3.Set("Far")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,v.Local.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,v.Local.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,v.Local.sValue3)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,v.Local.sValue2)
+
+	
+	v.Local.sProp.Set("CellHAlignment")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,v.Local.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,v.Local.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,v.Local.sValue3)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,v.Local.sValue2)
+	
+	v.Local.sProp.Set("Caption")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,"Customer")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,"Name")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,"Markup")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",V.Enum.ColumnPropertyNames!ShowCaption,False)
+			
+	v.Local.sProp.Set("Width")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,"90")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,"150")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,"90")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,"90")
+	
+	v.Local.sProp.Set("AllowEdit")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,False)
+
+
+	v.Local.sProp.Set("ReadOnly")
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Local.sProp,False)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Local.sProp,False)
+
+	
+	'Make DELETE an editor button
+	Gui.FormMaint.gsMarkup.ColumnEdit("gvMarkup","DELETE","EditorButton","Delete")
+
+	
+	gui.FormMaint.gsMarkup.ResumeLayout()
+
+Program.Sub.Format_Markup.End
+
+Program.Sub.Bulk_Format_Markup.Start
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","CUSTOMER",v.Args.sProp,v.Args.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","NAME_CUSTOMER",v.Args.sProp,v.Args.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","MARKUP",v.Args.sProp,v.Args.sValue)
+	gui.FormMaint.gsMarkup.SetColumnProperty("gvMarkup","DELETE",v.Args.sProp,v.Args.sValue)
+
+Program.Sub.Bulk_Format_Markup.End
+
+
+Program.Sub.cmdSaveMaint_Click.Start
+V.Local.iPROG.Declare
+V.Local.iOP.Declare
+V.Local.iQA.Declare
+V.Local.fMarkup.Declare
+V.Local.sRouterInstr.Declare
+V.Local.sSQL.Declare
+V.Local.sRet.Declare
+V.Local.iRet.Declare
+
+F.Intrinsic.Control.Try
+	
+	'Check if the values make sense
+	V.Local.iPROG.Set(V.Screen.FormMaint!txtDFLTProg.Text)
+	V.Local.iOP.Set(V.Screen.FormMaint!txtDFLTOp.Text)
+	V.Local.iQA.Set(V.Screen.FormMaint!txtDFLTQA.Text)
+	V.Local.fMarkup.Set(V.Screen.FormMaint!txtDFLTMatMarkup.Text)
+	V.Local.sRouterInstr.Set(V.Screen.FormMaint!txtDFLTRouterInst.Text)
+	
+	'See if there is a space at the end of the router instructions
+	'Could just use a varchar??? instead of a CHAR to hold this value in the DB so that it keeps the ending space characters. I will need to remove the Rtrim from the SQL statement aswell.
+	'tried varchar but its seems to be trimming the extra space at the end. Need to ask cidevs about this one.
+	
+	
+	'Upsert
+	F.ODBC.Connection!conx.ExecuteAndReturn("SELECT * From GAB_6875_Maintenance",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.String.Build("Insert Into GAB_6875_Maintenance (PROG,OP,QA,MARKUP,ROUTER_INSTR2) Values ('{0}','{1}','{2}','{3}','{4}')",V.Local.iPROG,V.Local.iOP,V.Local.iQA,V.Local.fMarkup,V.Local.sRouterInstr.PSQLFriendly,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Update GAB_6875_Maintenance Set PROG = '{0}', OP = '{1}', QA = '{2}', MARKUP = '{3}', ROUTER_INSTR2 = '{4}'",V.Local.iPROG,V.Local.iOP,V.Local.iQA,V.Local.fMarkup,V.Local.sRouterInstr.PSQLFriendly,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	'Change global values
+	V.Global.iPROG.Set(V.Local.iPROG)
+	V.Global.iOP.Set(V.Local.iOP)
+	V.Global.iQA.Set(V.Local.iQA)
+	V.Global.fMarkup.Set(V.Local.fMarkup)
+	V.Global.sRouterInstr.Set(V.Local.sRouterInstr)
+	
+	'Ask is the user wants to clear/refresh the screen?
+	
+	'maybe not
+	F.Intrinsic.UI.Msgbox("Values saved! Would you like to refresh the main screen with these values?","Save Successful",4,V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet,=,6)
+		gui.Form.txtSetupProg.Text(V.Global.iPROG)
+		gui.Form.txtSetupOp.Text(V.Global.iOP)
+		gui.Form.txtSetupQA.Text(V.Global.iQA)
+		gui.Form.txtMatMarkup.Text(V.Global.fMarkup)
+		gui.Form.txtRTRComments.Text(V.Global.sRouterInstr)
+	F.Intrinsic.Control.EndIf
+			
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveMaint_Click.End
+
+Program.Sub.cmdCustBrowserMaint_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sSQL.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Set("SELECT RTRIM(CUSTOMER) as CUSTOMER, RTRIM(NAME_CUSTOMER) as NAME_CUSTOMER FROM V_CUSTOMER_MASTER")
+'Split Column Names into an array (*!* delimited string)
+F.Intrinsic.String.Split("Customer Number*!*Name Customer","*!*",V.Local.sCol)
+'Split Column widths into an array (*!* delimited string)
+F.Intrinsic.String.Split("600*!*3000","*!*",V.Local.sColW)
+F.Intrinsic.UI.Browser("CUSTOMER BROWSER","Conx",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.FormMaint.txtCustCode.Text(V.Local.sRet(0))
+	gui.FormMaint.txtCustName.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCustBrowserMaint_Click.End
+
+Program.Sub.cmdAddMarkup_Click.Start
+V.Local.iRet.Declare
+V.Local.sCust.Declare
+V.Local.sName.Declare
+V.Local.sEmail.Declare
+V.Local.sSQL.Declare
+V.Local.sEmailCheck.Declare
+V.Local.iEmailType.Declare
+V.Local.fMarkup.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.Try
+
+V.Local.sCust.Set(V.Screen.FormMaint!txtCustCode.Text)
+V.Local.sName.Set(V.Screen.FormMaint!txtCustName.Text)
+V.Local.fMarkup.Set(V.Screen.FormMaint!txtMarkup.Text)
+
+F.Intrinsic.String.Trim(V.Local.sCust,V.Local.sCust)
+F.Intrinsic.String.Trim(V.Local.sName,V.Local.sName)
+
+F.Intrinsic.Control.If(V.Local.sName,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sCust,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Upsert
+F.Intrinsic.String.Build("Select * From GAB_6875_Markup_by_Cust where Customer = '{0}' ",V.Local.sCust.PSQLFriendly,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.String.Build("Insert into GAB_6875_Markup_by_Cust (CUSTOMER,MARKUP) Values ('{0}','{1}')",V.Local.sCust.PSQLFriendly,V.Local.fMarkup,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Update GAB_6875_Markup_by_Cust Set MARKUP = '{1}' where Customer = '{0}'",V.Local.sCust.PSQLFriendly,V.Local.fMarkup,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.Control.CallSub(LoaddtMarkup)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdAddMarkup_Click.End
+
+Program.Sub.gsMarkup_RowCellClick.Start
+V.Local.iRet.Declare
+V.Local.sMessage.Declare
+V.Local.sSQL.Declare
+V.Local.sCust.Declare
+
+F.Intrinsic.Control.Try
+'Check if they want to actually delete
+F.Intrinsic.Control.If(V.Args.Column.UCase,=,"DELETE")
+	F.Intrinsic.String.Build("Remove customer defualt markup? {0}",V.DataTable.dtMarkup(V.Args.RowIndex).NAME_CUSTOMER!FieldValTrim,V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Delete WO Status",4,V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxYes)
+		v.Local.sCust.Set(V.DataTable.dtMarkup(V.Args.RowIndex).CUSTOMER!FieldValTrim)
+		F.Intrinsic.String.Build("Delete From GAB_6875_Markup_by_Cust where CUSTOMER = '{0}'",V.Local.sCust.PSQLFriendly,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+		F.Data.DataTable.DeleteRow("dtMarkup",V.Args.RowIndex)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsMarkup_RowCellClick.End
+
+#End Region ' Maintenance Menu
+
+Program.Sub.cmdCustomerLookUp_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sSQL.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sRet.Declare(String)
+v.Local.sShipToID.Declare
+V.Local.fMaterialMarkup.Declare
+V.Local.sCust.Declare
+Gui.Form.lblCustomerName.Caption("")
+V.Local.sSQL.Set("SELECT RTRIM(CUSTOMER) as CUSTOMER, RTRIM(NAME_CUSTOMER) as NAME_CUSTOMER FROM V_CUSTOMER_MASTER")
+'Split Column Names into an array (*!* delimited string)
+F.Intrinsic.String.Split("Customer Number*!*Name Customer","*!*",V.Local.sCol)
+'Split Column widths into an array (*!* delimited string)
+F.Intrinsic.String.Split("600*!*3000","*!*",V.Local.sColW)
+F.Intrinsic.UI.Browser("CUSTOMER BROWSER","Conx",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form.txtCustomer.Text(V.Local.sRet(0))
+	Gui.Form.lblCustomerName.Caption(V.Local.sRet(1))
+	V.Local.sCust.Set(V.Local.sRet(0))
+	
+	F.Intrinsic.String.Build("select TOP 1 SHIP_SEQ from OE_MULTI_SHIP where CUSTOMER='{0}'",v.Local.sRet(0),v.local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sShipToID)
+	gui.Form.txtShipToID.Text(v.Local.sShipToID.RTrim)
+	F.Intrinsic.Control.CallSub(txtShipToID_Change)
+	
+	F.Intrinsic.String.Build("select TOP 1 RTRIM(SHIP_VIA) as SHIP_VIA from V_CUSTOMER_SHIPTO where CUSTOMER='{0}'",v.Local.sRet(0),v.local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.executeAndReturnEOF)
+		gui.Form.txtShipViaCode.Text("P")
+		gui.Form.txtShipVia.Text("CUSTOMER PICKUP")
+		
+	F.Intrinsic.Control.Else
+		gui.Form.txtShipViaCode.Text(V.Local.sRet)
+		gui.Form.txtShipVia.Text(V.Dictionary.dictShipVia![V.Local.sRet])
+	F.Intrinsic.Control.EndIf
+	
+	
+	'fill in the markup %
+	F.Intrinsic.String.Build("select MARKUP from GAB_6875_Markup_by_Cust where CUSTOMER = '{0}'",V.Local.sCust.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sCust.PSQLFriendly,V.Local.sret)
+	F.Intrinsic.Control.If(V.Ambient.executeAndReturnEOF.Not)
+		V.Local.fMaterialMarkup.Set(V.Local.sRet)
+	F.Intrinsic.Control.Else
+		F.ODBC.Connection!conx.ExecuteAndReturn("select MATERIAL_6 from V_MARKUP_PCT",V.Local.sret)
+		F.Intrinsic.Control.If(V.Ambient.executeAndReturnEOF)
+			V.Local.fMaterialMarkup.Set(1.34)
+			'V.Local.fOutsideMarkup.Set(1.34)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+			V.Local.fMaterialMarkup.Set(V.Local.sret(0).float)
+			'V.Local.fOutsideMarkup.Set(V.Local.sret(1).float)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	gui.Form.txtMatMarkup.Text(V.Local.fMaterialMarkup)
+	
+F.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCustomerLookUp_Click.End
+
+Program.Sub.cmdShipViaLookUp_Click.Start
+f.Intrinsic.Control.Try
+
+V.Local.sSQL.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sRet.Declare(String)
+v.Local.sShipToID.Declare
+V.Local.sSQL.Set("select RTRIM(ID) as ID, RTRIM(MESSAGE) as MESSAGE from SHIP_VIA")
+'Split Column Names into an array (*!* delimited string)
+F.Intrinsic.String.Split("ID*!*Ship Via","*!*",V.Local.sCol)
+'Split Column widths into an array (*!* delimited string)
+F.Intrinsic.String.Split("600*!*3000","*!*",V.Local.sColW)
+F.Intrinsic.UI.Browser("Ship Via Browser","Conx",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form.txtShipViaCode.Text(V.Local.sRet(0))
+	gui.Form.txtShipVia.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdShipViaLookUp_Click.End
+
+Program.Sub.chkSOWOCreate_Change.Start
+F.Intrinsic.Control.If(V.Screen.Form!chkSOWOCreate.CheckedAsBoolean)
+	gui.Form.txtSalesOrderFixedPrice.Enabled(True)
+	gui.Form.txtExtraNotes.Enabled(True)
+	gui.Form.txtCustomerPO.Enabled(True)
+F.Intrinsic.Control.Else
+	gui.Form.txtSalesOrderFixedPrice.Enabled(False)
+	gui.Form.txtExtraNotes.Enabled(False)
+	gui.Form.txtCustomerPO.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.chkSOWOCreate_Change.End
+
+Program.Sub.txtShipToID_Change.Start
+V.Local.sSQL.Declare
+V.Local.sCust.Declare
+V.Local.sShipToID.Declare
+V.Local.sRet.Declare
+V.Local.sShipInfo.Declare
+
+F.Intrinsic.Control.Try
+	V.Local.sCust.Set(V.Screen.Form!txtCustomer.Text)
+	F.Intrinsic.String.RTrim(V.Local.sCust,V.Local.sCust)
+	F.Intrinsic.Control.If(V.Local.sCust,=,"")
+		'No Customer
+		'F.Intrinsic.UI.Msgbox("Customer cannot be blank!")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	V.Local.sShipToID.Set(V.Screen.Form!txtShipToID.Text)
+	F.Intrinsic.String.RTrim(V.Local.sShipToID,V.Local.sShipToID)
+	
+	F.Intrinsic.Control.If(V.Local.sShipToID,=,"")
+		'Pull From Customer_Shipto table
+		F.Intrinsic.String.Build("select RTRIM(NAME_CUSTOMER_SHIP) as NAME_CUSTOMER_SHIP, RTRIM(ADDRESS1_SHIP) as ADDRESS1_SHIP, RTRIM(ADDRESS2_SHIP) as ADDRESS2_SHIP, RTRIM(CITY_SHIP) as CITY_SHIP, RTRIM(COUNTRY_SHIP) as COUNTRY_SHIP, RTRIM(CODE_ZIP_SHIP) as CODE_ZIP_SHIP, RTRIM(ATTENTION_SHIP) as ATTENTION_SHIP, '' as SHIP_ADDRESS3 from V_CUSTOMER_SHIPTO where CUSTOMER = '{0}'",V.Local.sCust.PSQLFriendly,V.Local.sSQL)
+		
+	F.Intrinsic.Control.Else
+		'Pull form OE_MULTISHIP table
+		F.Intrinsic.String.Build("select RTRIM(CUSTOMER_NAME) as NAME_CUSTOMER_SHIP, RTRIM(SHIP_ADDRESS1) as ADDRESS1_SHIP, RTRIM(SHIP_ADDRESS2) as ADDRESS2_SHIP, RTRIM(SHIP_CITY) as CITY_SHIP, RTRIM(SHIP_COUNTRY) as COUNTRY_SHIP, RTRIM(SHIP_ZIP) as CODE_ZIP_SHIP, RTRIM(SHIP_ATTENTION) as ATTENTION_SHIP, RTRIM(SHIP_ADDRESS3) as SHIP_ADDRESS3 from OE_MULTI_SHIP where CUSTOMER = '{0}' and SHIP_SEQ = '{1}'",V.Local.sCust.PSQLFriendly,V.Local.sShipToID.PSQLFriendly,V.Local.sSQL)
+		
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("No Valid ship To found!")
+			gui.Form.txtShipName.Text("")
+			gui.Form.txtAddress1.Text("")
+			gui.Form.txtAddress2.Text("")
+			gui.Form.txtAddress3.Text("")
+			'gui.Form.txtShipCity.Text("")
+			'gui.Form.txtShipCountry.Text("")
+			gui.Form.txtShipZip.Text("")
+			gui.Form.txtShipAttn.Text("")
+			gui.Form.txtPhone.Text("")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form.txtShipName.Text(V.Local.sRet(0))
+	gui.Form.txtAddress1.Text(V.Local.sRet(1))
+	gui.Form.txtAddress2.Text(V.Local.sRet(2))
+	gui.Form.txtAddress3.Text(V.Local.sRet(7))
+	'gui.Form.txtShipCity.Text(V.Local.sRet(3))
+	'gui.Form.txtShipCountry.Text(V.Local.sRet(4))
+	gui.Form.txtShipZip.Text(V.Local.sRet(5))
+	gui.Form.txtShipAttn.Text(V.Local.sRet(6))
+	'F.Intrinsic.String.Build("{1}{0}{2}{0}{3}{0}{4}{0}{5} {6}{0}{7}",V.Ambient.NewLine,V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet(2),V.Local.sRet(3),V.Local.sRet(4),V.Local.sRet(5),V.Local.sRet(6),V.Local.sShipInfo)
+	'gui.Form.txtShipToInfo.Text(V.Local.sShipInfo)
+	
+	'Get phone number
+	F.Intrinsic.String.Build("select Top 1 Telephone from V_CUSTOMER_MASTER where customer = '{0}'",V.Local.sCust.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		gui.Form.txtPhone.Text("")
+	F.Intrinsic.Control.Else
+		gui.Form.txtPhone.Text(V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.txtShipToID_Change.End
+
+'wanted to created a SO look up, this is still in dev since it pulls from 2 different DBS and the sigmanest one is messy.
+Program.Sub.cmdSOLookUp_Click.Start
+'f.Intrinsic.Control.Try
+
+'V.Local.sSQL.Declare(String)
+'V.Local.sCol.Declare(String)
+'V.Local.sColW.Declare(String)
+'V.Local.sRet.Declare(String)
+'v.Local.sShipToID.Declare
+
+'V.Local.sSQL.Set("SELECT RTRIM(CUSTOMER) as CUSTOMER, NAME_CUSTOMER FROM V_CUSTOMER_MASTER")
+
+
+'F.ODBC.Connection!conSQL.openconnection("Driver={SQL Server}; Server=SMC2K15\SIGMANEST; Database=SNDBaseX1.3; User Id=SNUser; Password=BestNest1445")
+'	F.Intrinsic.String.Build("Select DISTINCT Rtrim(PartData1) as 'Data1', ProgrammedBy, Rtrim(PartData3) as 'Data3', Rtrim(PartData5) as 'Data5' From PARTSLibrary Order by Data1",v.Screen.Form!txtSalesOrderNumber.Text,V.Local.sSQL)
+'F.ODBC.Connection!conSQL.Close
+
+'V.Local.sSQL.Set("SELECT RTRIM(CUSTOMER) as CUSTOMER, NAME_CUSTOMER FROM V_CUSTOMER_MASTER")
+''Split Column Names into an array (*!* delimited string)
+'F.Intrinsic.String.Split("Customer Number*!*Name Customer","*!*",V.Local.sCol)
+''Split Column widths into an array (*!* delimited string)
+'F.Intrinsic.String.Split("600*!*3000","*!*",V.Local.sColW)
+'F.Intrinsic.UI.Browser("CUSTOMER BROWSER","Conx",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+'F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	gui.Form.txtCustomer.Text(V.Local.sRet(0))
+'	
+'	F.Intrinsic.String.Build("select TOP 1 SHIP_SEQ from OE_MULTI_SHIP where CUSTOMER='{0}'",v.Local.sRet(0),v.local.sSQL)
+'	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sShipToID)
+'	gui.Form.txtShipToID.Text(v.Local.sShipToID)
+'	
+'F.Intrinsic.Control.EndIf
+
+
+'f.Intrinsic.Control.Catch
+'	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+'f.Intrinsic.Control.EndTry
+Program.Sub.cmdSOLookUp_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8615.24403$}$1
+${$6$}$sstanka$}$20230918120104823$}$mP+zz5Tw3sT2/nyap+FbWm4triMPqjXDkk1didH2j2NvHcOIx71lUb2vcvmp527tvH1wQUlVUrE=
+Program.Sub.Comments.End
